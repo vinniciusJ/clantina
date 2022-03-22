@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../../public/styles/global.css">
+    <link rel="stylesheet" href="../../public/styles/login.css">
 
     <title>Clantina | Login</title>
 </head>
@@ -27,7 +28,7 @@
             </div>
 
             <button class="login-form__send-button">
-                Login <img src="../../public/images/right-arrow.svg" alt="Seta para a direita">
+                <strong>Login <img src="../../public/images/right-arrow.svg" alt="Seta para a direita"></strong>
             </button>
         </form>
     </main>

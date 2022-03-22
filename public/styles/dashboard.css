@@ -1,0 +1,81 @@
+.container{
+    margin-top: 8.75rem;
+    width: 75vw;
+}
+
+.dashboard-header{
+    width: 100%;
+    margin-bottom: 14rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-header__title{
+    font-size: 7rem;
+    font-weight: 700;
+}
+
+.dashboard-header__title--yellow{
+    color: var(--yellow-800);
+    font-weight: 700;
+}
+
+.dashboard-sale-container{
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.dashboard-sale-container a{
+    width: 100%;
+    border: none;
+    background-color: var(--yellow-800);
+    text-decoration: none;
+
+    padding: 1.8rem;
+    border-radius: 2rem;
+    height: 8rem;
+}
+
+.dashboard-sale-container a strong{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-600);
+
+    gap: .5rem;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.dashboard-menu{
+    border: solid .25rem var(--black-600);
+    border-radius: 2rem;
+}
+
+.dashboard-menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 2rem;
+    padding: 3.25rem 4rem;
+}
+
+.dashboard-menu .dashboard-menu__item{
+    width: 100%;
+}
+
+.dashboard-menu .dashboard-menu__item a{
+    text-decoration: none;
+    color: var(--black-600);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    font-size: 2.5rem;
+}
+

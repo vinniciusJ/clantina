@@ -2,68 +2,68 @@
 
 class Item {
     private $id;
-    private $id_item_type;
+    private $idItemType;
     private $status;
-    private $purchase_price;
-    private $id_sale;
+    private $purchasePrice;
+    private $idSale;
 
-    public function get_id()
+    public function getId()
     {
         return $this->id;
     }
 
-    public function set_id($id)
+    public function setId($id)
     {
         $this->id = $id;
 
         return $this;
     }
 
-    public function get_id_item_type()
+    public function getIdItemType()
     {
-        return $this->id_item_type;
+        return $this->idItemType;
     }
 
-    public function set_id_item_type($id_item_type)
+    public function setIdItemType($idItemType)
     {
-        $this->id_item_type = $id_item_type;
+        $this->idItemType = $idItemType;
 
         return $this;
     }
  
-    public function get_status()
+    public function getStatus()
     {
         return $this->status;
     }
 
-    public function set_status($status)
+    public function setStatus($status)
     {
         $this->status = $status;
 
         return $this;
     }
 
-    public function get_purchase_price()
+    public function getPurchasePrice()
     {
-        return $this->purchase_price;
+        return $this->purchasePrice;
     }
 
 
-    public function set_purchase_price($purchase_price)
+    public function setPurchasePrice($purchasePrice)
     {
-        $this->purchase_price = $purchase_price;
+        $this->purchasePrice = $purchasePrice;
 
         return $this;
     }
 
-    public function get_id_sale()
+    public function getIdSale()
     {
-        return $this->id_sale;
+        return $this->idSale;
     }
 
-    public function set_id_sale($id_sale)
+    public function setIdSale($idSale)
     {
-        $this->id_sale = $id_sale;
+        $this->idSale = $idSale;
 
         return $this;
     }

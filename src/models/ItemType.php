@@ -3,24 +3,24 @@
         private $id;
         private $name;
 
-        public function get_id()
+        public function getId()
         {
                 return $this->id;
         }
 
-        public function set_id($id)
+        public function setId($id)
         {
                 $this->id = $id;
 
                 return $this;
         }
 
-        public function get_name()
+        public function getName()
         {
                 return $this->name;
         }
 
-        public function set_name($name)
+        public function setName($name)
         {
                 $this->name = $name;
 

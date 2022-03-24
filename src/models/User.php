@@ -7,88 +7,88 @@ class User {
     private $type;
     private $photo;
     private $name;
-    private $id_locale;
+    private $idLocale;
 
-    public function get_id()
+    public function getId()
     {
         return $this->id;
     }
 
-    public function set_id($id)
+    public function setId($id)
     {
         $this->id = $id;
 
         return $this;
     }
 
-    public function get_username()
+    public function getUsername()
     {
         return $this->username;
     }
 
-    public function set_username($username)
+    public function setUsername($username)
     {
         $this->username = $username;
 
         return $this;
     }
 
-    public function get_password()
+    public function getPassword()
     {
         return $this->password;
     }
 
-    public function set_password($password)
+    public function setPassword($password)
     {
         $this->password = $password;
 
         return $this;
     }
 
-    public function get_type()
+    public function getType()
     {
         return $this->type;
     }
 
-    public function set_type($type)
+    public function setType($type)
     {
         $this->type = $type;
 
         return $this;
     }
 
-    public function get_photo()
+    public function getPhoto()
     {
         return $this->photo;
     }
 
-    public function set_photo($photo)
+    public function setPhoto($photo)
     {
         $this->photo = $photo;
 
         return $this;
     }
 
-    public function get_name()
+    public function getName()
     {
         return $this->name;
     }
 
-    public function set_name($name)
+    public function setName($name)
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function get_id_locale()
+    public function getIdLocale()
     {
-        return $this->id_locale;
+        return $this->idLocale;
     }
 
-    public function set_id_locale($id_locale)
+    public function setIdLocale($idLocale)
     {
-        $this->id_locale = $id_locale;
+        $this->idLocale = $idLocale;
 
         return $this;
     }

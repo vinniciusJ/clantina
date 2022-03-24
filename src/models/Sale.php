@@ -4,63 +4,63 @@ class Sale {
     private $id;
     private $value;
     private $date;
-    private $id_user;
+    private $idUser;
     private $type;
 
-    public function get_id()
+    public function getId()
     {
         return $this->id;
     }
 
-    public function set_id($id)
+    public function setId($id)
     {
         $this->id = $id;
 
         return $this;
     }
 
-    public function get_value()
+    public function getValue()
     {
         return $this->value;
     }
 
-    public function set_value($value)
+    public function setValue($value)
     {
         $this->value = $value;
 
         return $this;
     }
 
-    public function get_date()
+    public function getDate()
     {
         return $this->date;
     }
 
-    public function set_date($date)
+    public function setDate($date)
     {
         $this->date = $date;
 
         return $this;
     }
 
-    public function get_id_user()
+    public function getIdUser()
     {
-        return $this->id_user;
+        return $this->idUser;
     }
 
-    public function set_id_user($id_user)
+    public function setIdUser($idUser)
     {
-        $this->id_user = $id_user;
+        $this->idUser = $idUser;
 
         return $this;
     }
 
-    public function get_type()
+    public function getType()
     {
         return $this->type;
     }
 
-    public function set_type($type)
+    public function setType($type)
     {
         $this->type = $type;
 

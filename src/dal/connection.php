@@ -8,7 +8,7 @@
 	$con = mysqli_connect($host, $user, $password, $dbname);
     class Connection
     {
-        static function conectar()
+        static function connect()
         {
             try {
             $pdo = new PDO('mysql:host={$host};dbname={$dbname}', $user, $password);

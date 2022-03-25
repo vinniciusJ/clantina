@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../../public/styles/global.css">
 
-    <link rel="stylesheet" href="../../public/styles/new-sale.php">
+    <link rel="stylesheet" href="../../public/styles/new-sale.css">
 
     <title>Clantina | Nova Venda</title>
 </head>
@@ -22,7 +22,7 @@
         </header>
 
         <section class="client">
-            <h2>Cliente</h2>
+            <h2>Cliente: </h2>
 
             <select name="client" id="client">
                 <option value="">Dyogo Bendo</option>

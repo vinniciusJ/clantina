@@ -4,10 +4,8 @@ class User {
     private $id;
     private $username;
     private $password;
-    private $type;
-    private $photo;
-    private $name;
-    private $idLocale;
+    private $type;    
+    private $name;    
 
     public function getId()
     {
@@ -57,18 +55,6 @@ class User {
         return $this;
     }
 
-    public function getPhoto()
-    {
-        return $this->photo;
-    }
-
-    public function setPhoto($photo)
-    {
-        $this->photo = $photo;
-
-        return $this;
-    }
-
     public function getName()
     {
         return $this->name;
@@ -77,18 +63,6 @@ class User {
     public function setName($name)
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getIdLocale()
-    {
-        return $this->idLocale;
-    }
-
-    public function setIdLocale($idLocale)
-    {
-        $this->idLocale = $idLocale;
 
         return $this;
     }

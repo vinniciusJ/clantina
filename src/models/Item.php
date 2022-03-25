@@ -7,6 +7,7 @@ class Item {
     private $purchasePrice;
     private $idSale;
     private $price;
+    private $idSeller;
 
     public function getId()
     {
@@ -16,6 +17,18 @@ class Item {
     public function setId($id)
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    public function getSeller()
+    {
+        return $this->seller;
+    }
+
+    public function setSeller($seller)
+    {
+        $this->seller = $seller;
 
         return $this;
     }

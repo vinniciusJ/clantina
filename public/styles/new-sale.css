@@ -9,7 +9,7 @@
 }
 
 :is(.client, .items, .payment, .observation) h2{
-   font-size: 2.5rem;
+   font-size: 3rem;
    margin-bottom: 2rem;
    font-weight: 500;   
 }

@@ -1,16 +1,15 @@
-.items {
+.items{
     border: solid .25rem;
     border-radius: 2rem;
     padding: 1rem;
-    margin-bottom: 4rem;
 }
 
-.item {
+.item{
     list-style: none;
     border-bottom: .25rem solid;
 }
 
-.item a {
+.item a{
     text-decoration: none;
     width: 100%;
     display: flex;
@@ -19,6 +18,14 @@
     padding: 1rem;
 }
 
-.item:last-child {
+.item:last-child{
     border-bottom: 0;
+}
+
+.empty-storage{
+    font-size: 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

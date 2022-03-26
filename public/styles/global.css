@@ -58,6 +58,12 @@ body{
     padding: 1.8rem;
     border-radius: 2rem;
     height: 8rem;
+    margin-top: 4rem;
+    transition: all .1s;
+}
+
+.btn:active, .btn:hover {
+    background-color: var(--yellow-400);
 }
 
 .btn strong{
@@ -69,4 +75,8 @@ body{
     gap: .5rem;
     font-weight: 600;
     font-size: 2.5rem;
+}
+
+strong {
+    font-weight: 600;
 }

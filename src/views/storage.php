@@ -21,6 +21,12 @@
             <h1>Estoque</h1>
         </header>
 
+        <?php
+
+        if($condition = true):
+
+        ?>
+
         <section class="items">
             <ul>
                 <li class="item"><a href="">Pão de queijo <img src="../../public/images/chevron-right.svg"></a></li>
@@ -31,6 +37,25 @@
                 <li class="item"><a href="">Pão de queijo <img src="../../public/images/chevron-right.svg"></a></li>
             </ul>
         </section>
+
+        <?php
+            endif;
+        ?>
+
+        <?php
+
+            if($condition = false):
+            
+        ?>
+
+        <section class="empty-storage">
+            <img src="../../public/images/frown.svg">
+            Nenhum produto em estoque
+        </section> 
+
+        <?php
+            endif;
+        ?>
 
         <footer class="footer">
             <button class="btn">

@@ -98,3 +98,22 @@
     flex-direction: column;
     gap: 1.5rem;
 }
+
+.sales-list.none-item{
+    display: none;
+}
+
+.none-item-alert{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2rem;
+    margin-top: 10rem;
+}
+
+.none-item-alert h2{
+    font-size: 4rem;
+    text-align: center;
+
+}

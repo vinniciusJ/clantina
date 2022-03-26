@@ -4,17 +4,7 @@
    margin-bottom: 6rem;
 }
 
-.new-sale-header{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
 
-   margin-bottom: 8rem;
-}
-
-.new-sale-header h1{
-   font-size: 4rem;
-}
 
 :is(.client, .items, .payment){
    margin-bottom: 4rem;

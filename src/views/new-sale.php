@@ -16,8 +16,10 @@
 </head>
 <body>
     <main class="container">
-        <header class="new-sale-header">
-            <img src="../../public/images/left-arrow.svg" alt="Voltar">
+        <header class="header">
+            <button id="go-back">
+                <img src="../../public/images/left-arrow.svg" alt="Voltar">
+            </button>
             <h1>Nova venda</h1>
         </header>
 
@@ -144,5 +146,6 @@
     </main>
 
     <script src="../../public/scripts/new-sale.js" type="module"></script>
+    <script src="../../public/scripts/header.js" type="module"></script>
 </body>
 </html>

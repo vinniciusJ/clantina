@@ -80,3 +80,20 @@ body{
 strong {
     font-weight: 600;
 }
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8rem;
+}
+
+.header button{
+    background: none;
+    border: none;
+}
+
+.header h1{
+    font-size: 4rem;
+}

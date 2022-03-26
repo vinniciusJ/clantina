@@ -13,11 +13,13 @@
     margin: 0;
     box-sizing: border-box;
     outline: none;
+    color: var(--black-600);
 }
 
 *, input, button, textarea{
     font-family: 'Fredoka', sans-serif;
     font-weight: 500;
+    font-size: 2rem;
 }
 
 body{
@@ -26,13 +28,42 @@ body{
     justify-content: center;
  }
 
+.container{
+    width: 75vw;
+    margin-top: 6rem;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8rem;
+}
+
+.header h1{
+    font-size: 4rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
 .btn{  
     border: none;
     background-color: var(--yellow-800);
 
+    width: 100%;
     padding: 1.8rem;
     border-radius: 2rem;
     height: 8rem;
+    margin-top: 4rem;
+    transition: all .1s;
+}
+
+.btn:active, .btn:hover {
+    background-color: var(--yellow-400);
 }
 
 .btn strong{
@@ -44,4 +75,8 @@ body{
     gap: .5rem;
     font-weight: 600;
     font-size: 2.5rem;
+}
+
+strong {
+    font-weight: 600;
 }

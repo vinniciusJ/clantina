@@ -14,13 +14,13 @@
 
     <title>Clantina | Login</title>
 </head>
-<body>
+<body>    
     <main class="container">
         <header class="login-header">
             <h1 class="login-header__title"><span class="login-header__title--yellow">Clan</span>tina</h1>
         </header>
 
-        <form action="" method="POST" class="login-form">
+        <form action="../controllers/UserController.php" method="POST" class="login-form">
             <div class="login-form__input-container">
                 <input type="text" name="username" id="username" placeholder="Nome do usuário" required>
             </div>
@@ -31,6 +31,7 @@
             <button class="login-form__send-button">
                 <strong>Login <img src="../../public/images/right-arrow.svg" alt="Seta para a direita"></strong>
             </button>
+            <input type="hidden" name="action" value="2">
         </form>
     </main>
 </body>

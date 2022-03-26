@@ -1,0 +1,31 @@
+.items{
+    border: solid .25rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.item{
+    list-style: none;
+    border-bottom: .25rem solid;
+}
+
+.item a{
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.item:last-child{
+    border-bottom: 0;
+}
+
+.empty-storage{
+    font-size: 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

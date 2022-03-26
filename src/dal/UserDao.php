@@ -25,4 +25,11 @@
             $dados = $query->fetchAll(PDO::FETCH_OBJ);            
             return $dados;
         }
+
+        function listAllClients(){
+            $sql = "select id_user, name from user where type = 'client'";
+            $query = $this->conn->query($sql);
+            $dados = $query->fetchAll(PDO::FETCH_OBJ);
+            return $dados;
+        }
     }

@@ -20,11 +20,15 @@
             <h1 class="dashboard-header__title"><span class="dashboard-header__title--yellow">Clan</span>tina</h1>
         </header>
 
-        <section class="dashboard-sale-container">
-            <a href="">
-                <strong>Nova venda <img src="../../public/images/plus.svg" alt="Seta para a direita"></strong>
-            </a>
-        </section>
+        <?php
+            session_start();        
+            if($_SESSION['type'] == 'seller'){
+                require_once __DIR__ . "/components/dashboard-new-sale-button.php";
+            } elseif($_SESSION['type'] == 'client'){
+                header("Location:../views/storage.php");     
+                exit();
+            }
+        ?>        
 
         <nav class="dashboard-menu">
             <ul>

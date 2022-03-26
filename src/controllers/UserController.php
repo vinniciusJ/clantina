@@ -1,7 +1,7 @@
 <?php
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+    error_reporting(E_ALL);    
 
     require_once __DIR__ . "/../dal/UserDao.php";
     require_once __DIR__ . "/../models/User.php";
@@ -25,12 +25,20 @@
                 header("Location:../views/login.php");          
             } else{
                 session_start();
-                $user = $result[0];
+                $user = $result[0]; 
                 $_SESSION['username'] = $user->username;
                 $_SESSION['name'] = $user->name;
                 $_SESSION['type'] = $user->type;
+                $_SESSION['idUser'] = $user->id_user;
                 
-                header("Location:../views/dashboard.php");          
+                if($user->type == 'client'){                    
+                    header("Location:../views/storage.php");     
+                    exit();
+                } else{
+                    header("Location:../views/dashboard.php");  
+                    exit();
+                }
+                
             }
         }
     }

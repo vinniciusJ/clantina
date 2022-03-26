@@ -25,15 +25,16 @@
 
         <form action="" method="POST">
             <section class="client">
-                <h2>Cliente: </h2>
-    
+                <h2>Cliente: </h2>                
                 <select name="client" id="client">
-                    <option value="">Dyogo Bendo</option>
-                    <option value="">Nikoly Cover</option>
-                    <option value="">Vinicius Jimenez</option>
+                    <?php                        
+                        session_start();
+                        foreach($_SESSION["list-clients"] as $client){
+                            echo "<option value='{$client->id_user}'>{$client->name}</option>";
+                        }                        
+                    ?>                    
                 </select>
             </section>
-    
             <section class="items">
                 <h2>Item:</h2>
                 

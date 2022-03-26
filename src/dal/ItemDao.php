@@ -26,4 +26,11 @@
             $dados = $query->fetchAll(PDO::FETCH_OBJ);
             return $dados;
         }
+
+        function listActiveItemsFromSeller($sellerId){
+            $sql = "SELECT * FROM item WHERE status = 'active' and id_seller = {$sellerId}";
+            $query = $this->conn->query($sql);
+            $dados = $query->fetchAll(PDO::FETCH_OBJ);
+            return $dados;
+        }
     }

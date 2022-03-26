@@ -17,6 +17,7 @@
 }
 
 .dashboard-header__title--yellow{
+    font-size: 7rem;
     color: var(--yellow-800);
     font-weight: 700;
 }

@@ -96,7 +96,6 @@
 }
 
 .item-container .item-container__info--list .qtty-input{
-   position: relative;
    width: 10rem;
 }  
 
@@ -105,37 +104,14 @@
    width: 100%;
    height: 3rem;
 
-   padding-left: 20px;
-   padding-right: 20px;
+   padding-left: calc(50% - 1rem);
+   /*padding-right: 50%;*/
 
    background: none;
    border: solid .25rem var(--black-600);
    appearance: textfield;
 }
 
-.item-container .item-container__info--list .qtty-input button{
-   background: none;
-   border: none;
-   position: absolute;
-
-   font-size: 2rem;
-}
-
-.item-container .item-container__info--list .qtty-input button:first-of-type{
-   position: absolute;
-   
-   top: 40%;
-   left: 10px;
-   transform: translate(0%, -50%);
-}
-
-.item-container .item-container__info--list .qtty-input button:last-of-type{
-   position: absolute;
-   
-   top: 40%;
-   right: 5px;
-   transform: translate(0%, -50%);  
-}
 
 .item-container .item-container__info--list .qtty-input input::-webkit-inner-spin-button, .item-container .item-container__info--list .qtty-input input::-webkit-outer-spin-button{
    -webkit-appearance: textfield;

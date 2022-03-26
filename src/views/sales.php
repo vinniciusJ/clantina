@@ -40,7 +40,7 @@
             </form>
         </section>
 
-        <section class="sales-list">
+        <section class="sales-list none-item">
             <div class="sale-container" >
                 <header class="sale-container__minus-button">
                     <button class="sale-container__minuts-button--btn" >
@@ -120,6 +120,12 @@
                     </table>
                 </section>
             </div>
+        </section>
+
+        <section class="none-item-alert">
+            <img src="../../public/images/frown.svg" alt="Sad">
+
+            <h2>Nenhuma venda registrada</h2>
         </section>
 
         <footer class="period-result">

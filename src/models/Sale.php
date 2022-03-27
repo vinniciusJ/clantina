@@ -4,8 +4,20 @@ class Sale {
     private $id;
     private $value;
     private $date;
-    private $idUser;
+    private $idSeller;
     private $type;
+    private $payedValue;
+    private $idClient;
+    private $change;
+
+    function __construct($value, $idSeller, $type, $change, $payedValue, $idClient){
+        $this->value = $value;
+        $this->idSeller = $idSeller;
+        $this->type = $type;
+        $this->change = $change;
+        $this->payedValue = $payedValue;        
+        $this->idClient = $idClient;
+    }
 
     public function getId()
     {
@@ -31,6 +43,30 @@ class Sale {
         return $this;
     }
 
+    public function getPayedValue()
+    {
+        return $this->payedValue;
+    }
+
+    public function setPayedValue($payedValue)
+    {
+        $this->payedValue = $payedValue;
+
+        return $this;
+    }
+
+    public function getIdClient()
+    {
+        return $this->idClient;
+    }
+
+    public function setIdClient($idClient)
+    {
+        $this->idClient = $idClient;
+
+        return $this;
+    }
+
     public function getDate()
     {
         return $this->date;
@@ -43,14 +79,27 @@ class Sale {
         return $this;
     }
 
-    public function getIdUser()
+    public function getChange()
     {
-        return $this->idUser;
+        return $this->change;
     }
 
-    public function setIdUser($idUser)
+    public function setChange($change)
     {
-        $this->idUser = $idUser;
+        $this->change = $change;
+
+        return $this;
+    }
+
+
+    public function getIdSeller()
+    {
+        return $this->idSeller;
+    }
+
+    public function setIdSeller($idSeller)
+    {
+        $this->idSeller = $idSeller;
 
         return $this;
     }
@@ -66,6 +115,7 @@ class Sale {
 
         return $this;
     }
+
 }
 
 ?>

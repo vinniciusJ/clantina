@@ -7,13 +7,12 @@
             $this->conn = Connection::connect();
         }
 
-        function insertSale(Sale $sale, $idSeller) {
-            $sql = "INSERT INTO sale(´value´, ´date´, ´idUser´, ´type´)
-            VALUES ('{$sale->getValue()}', '{$sale->getDate()}', '{$sale->getIdUser()}', '{$sale->getType()}'";
-            $idSale = $this->conn->exec($sql);
-
-            $sql = "UPDATE item SET id_sale = '{$idSale}' WHERE status = 'active' AND id_seller = '{$idSeller}'";
+        function registerSale(Sale $sale) {
+            $sql = "INSERT INTO sale(`value`, `id_seller`, `id_client`, `type`, `change`, `payed_value`)
+            VALUES ('{$sale->getValue()}', '{$sale->getIdSeller()}', '{$sale->getIdClient()}', '{$sale->getType()}', '{$sale->getChange()}', '{$sale->getPayedValue()}')";                        
             $this->conn->exec($sql);
+            $idSale = $this->conn->lastInsertId();
+            return $idSale;
         }
 
         function listAllSalesWithItems() {
@@ -28,6 +27,6 @@
             $query = $this->conn->query($sql);
             $data = $query->fetchAll(PDO::FETCH_OBJ);
             return $data;
-        }
+        }        
     }
 ?>

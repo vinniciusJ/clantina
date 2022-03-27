@@ -23,7 +23,8 @@
             <h1>Nova venda</h1>
         </header>
 
-        <form action="" method="POST">
+        <form action="../controllers/SaleController.php" method="POST">
+            <input type="hidden" name="action" value="1">
             <section class="client">
                 <h2>Cliente: </h2>                
                 <select name="client" id="client">
@@ -34,20 +35,21 @@
                         }                        
                     ?>                    
                 </select>
-            </section>
+            </section>            
             <section class="items">
-                <h2>Item:</h2>
-                
+                <h2>Item:</h2>                
                 <div class="items-list">
                     <div class="item-container" data-id="0">
                         <header class="item-container__header">
                             <select name="items[]" id="items">
-                                <option value="">Pão de Queijo</option>
-                                <option value="">Salame com bacon   </option>
+                                <?php
+                                    foreach($_SESSION["list-items"] as $item){
+                                        echo "<option value='{$item->id_type}'>{$item->name}</option>";
+                                    }
+                                ?>                                
                             </select>
                             <button><img src="../../public/images/trash.svg" alt="Excluir item"></button> 
-                        </header>
-                        
+                        </header>                        
                         <section class="item-container__info">
                             <div class="item-container__info--list">
                                 <span>Quantidade: </span>
@@ -75,8 +77,11 @@
                         <div class="item-container" data-id="">
                             <header class="item-container__header">
                                 <select name="items[]" id="items">
-                                    <option value="">Pão de Queijo</option>
-                                    <option value="">Salame com bacon   </option>
+                                <?php
+                                    foreach($_SESSION["list-items"] as $item){
+                                        echo "<option value='{$item->id_type}'>{$item->name}</option>";
+                                    }
+                                ?>       
                                 </select>
                                 <button><img src="../../public/images/trash.svg" alt="Excluir item"></button> 
                             </header>
@@ -84,10 +89,8 @@
                             <section class="item-container__info">
                                 <div class="item-container__info--list">
                                     <span>Quantidade: </span>
-                                    <div class="qtty-input">
-                                        
-                                        <input type="number" name="quantity[]" value="1" id="quantity" min="0">
-                                        
+                                    <div class="qtty-input">                                        
+                                        <input type="number" name="quantity[]" value="1" id="quantity" min="0">                                        
                                     </div>
                                 </div>
                                 <div class="item-container__info--list">
@@ -111,8 +114,8 @@
             <section class="payment">
                 <h2>Pagamento:</h2>
                 <select name="payment-method" id="payment-method">
-                    <option value="">Dinheiro Físico</option>
-                    <option value="">PIX</option>
+                    <option value="money">Dinheiro Físico</option>
+                    <option value="pix">PIX</option>
                 </select>
     
                 <div class="payment__value">
@@ -124,10 +127,10 @@
                 </div>
     
                 <div class="payment__results">
-                    <strong>Total da venda:</strong> R$ <span class="total-price">5,00</span>
+                    <strong>Total da venda:</strong> R$ <input type="number" value="5" name="value" class="total-price"></input>
                 </div>
                 <div class="payment__results">
-                    Troco: R$ <span class="total-price">5,00</span>
+                    Troco: R$ <input type="number" class="total-price" value="0" name="change"></input>
                 </div>
             </section>
     
@@ -155,7 +158,35 @@
             </footer>
         </section>
     </dialog>
-
+    
+    <script>
+        const selectItems = document.getElementById('items'); 
+        const itemsDataList = [
+            
+            <?php             
+                foreach($_SESSION["list-items"] as $item){
+                    echo "{";
+                    echo "idItemType: {$item->id_type}, price: {$item->price}, quantity: {$item->quantity}";
+                    echo "},";
+                }
+            ?>                    
+        ]        
+        selectItems.onchange = event => {            
+            itemsDataList.forEach(item => {
+                if(item.idItemType == event.target.value){
+                    console.log(item);
+                    const itemValues = event.target.parentElement.parentElement.childNodes[3].childNodes;
+                    const qttdInput = itemValues[1].childNodes[3].childNodes[1]
+                    const unitPrice = itemValues[3].childNodes[3].childNodes[1]
+                    const subTotal = itemValues[5].childNodes[3].childNodes[1]                    
+                    qttdInput.setAttribute("max", item.quantity);
+                    qttdInput.value = 1;
+                    unitPrice.innerText = item.price;
+                    subTotal.innerText = item.price;                    
+                }
+            })                        
+        }            
+    </script>
     <script src="../../public/scripts/new-sale.js" type="module"></script>
 </body>
 </html>

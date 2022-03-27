@@ -28,9 +28,21 @@
         }
 
         function listActiveItemsFromSeller($sellerId){
-            $sql = "SELECT * FROM item WHERE status = 'active' and id_seller = {$sellerId}";
+            $sql = 
+            "select count(id_item) as quantity, avg(item.price) as price, it.name, it.id_item_type as id_type from item
+            inner join item_type as it on item.id_item_type = it.id_item_type 
+            inner join user on item.id_seller = user.id_user
+            where item.status = 'active' and item.id_seller = {$sellerId}
+            group by item.id_item_type;";
             $query = $this->conn->query($sql);
             $dados = $query->fetchAll(PDO::FETCH_OBJ);
             return $dados;
+        
+        }
+
+        function updateSoldItems($item, $quantity, $idSeller, $idSale){
+            $sql = "UPDATE item SET status = 'sold', id_sale = {$idSale}
+                WHERE status = 'active' and id_item_type = {$item} and id_seller = {$idSeller} LIMIT $quantity";
+            $this->conn->query($sql);            
         }
     }

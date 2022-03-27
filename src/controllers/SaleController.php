@@ -39,8 +39,9 @@
             $idSeller = $_SESSION["idUser"];
             $items = $_POST["items"];
             $quantity = $_POST["quantity"];
+            $note = $_POST['note'];
 
-            $sale = new Sale($value, $idSeller, $type, $change, $payedValue, $idClient);                        
+            $sale = new Sale($value, $idSeller, $type, $change, $payedValue, $idClient, $note);                        
             $idSale = $this->saleDao->registerSale($sale);            
 
             for ($i=0; $i < count($quantity); $i++) { 

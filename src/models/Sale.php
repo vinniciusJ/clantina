@@ -9,14 +9,16 @@ class Sale {
     private $payedValue;
     private $idClient;
     private $change;
+    private $note;
 
-    function __construct($value, $idSeller, $type, $change, $payedValue, $idClient){
+    function __construct($value, $idSeller, $type, $change, $payedValue, $idClient, $note){
         $this->value = $value;
         $this->idSeller = $idSeller;
         $this->type = $type;
         $this->change = $change;
         $this->payedValue = $payedValue;        
         $this->idClient = $idClient;
+        $this->note = $note;
     }
 
     public function getId()
@@ -27,6 +29,18 @@ class Sale {
     public function setId($id)
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    public function setNote($note)
+    {
+        $this->note = $note;
 
         return $this;
     }

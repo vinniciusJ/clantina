@@ -8,8 +8,8 @@
         }
 
         function registerSale(Sale $sale) {
-            $sql = "INSERT INTO sale(`value`, `id_seller`, `id_client`, `type`, `change`, `payed_value`)
-            VALUES ('{$sale->getValue()}', '{$sale->getIdSeller()}', '{$sale->getIdClient()}', '{$sale->getType()}', '{$sale->getChange()}', '{$sale->getPayedValue()}')";                        
+            $sql = "INSERT INTO sale(`value`, `id_seller`, `id_client`, `type`, `change`, `payed_value`, `note`)
+            VALUES ('{$sale->getValue()}', '{$sale->getIdSeller()}', '{$sale->getIdClient()}', '{$sale->getType()}', '{$sale->getChange()}', '{$sale->getPayedValue()}', '{$sale->getNote()}')";                        
             $this->conn->exec($sql);
             $idSale = $this->conn->lastInsertId();
             return $idSale;

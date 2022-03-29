@@ -33,7 +33,7 @@
         <nav class="dashboard-menu">
             <ul>
                 <li class="dashboard-menu__item">
-                    <a href="">Vendas <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
+                    <a href="../controllers/SaleController.php?action=2">Vendas <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
                 </li>
                 <li class="dashboard-menu__item">
                     <a href="../controllers/ItemController.php?action=2">Estoque <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>

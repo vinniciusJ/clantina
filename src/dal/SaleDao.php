@@ -22,8 +22,11 @@
             return $data;
         }
 
-        function listSalesFromSeller($idSaler) {
-            $sql = "SELECT * FROM sale WHERE idSaler = '{idSaler}'";
+        function listSalesFromSeller($idSeller) {
+            $sql = "select sale.id_sale, sale.value, sale.type, sale.change, sale.payed_value, sale.date, sale.note, user.name from sale
+            inner join user on sale.id_client = user.id_user
+            where sale.id_seller = {$idSeller};";
+            $sql;
             $query = $this->conn->query($sql);
             $data = $query->fetchAll(PDO::FETCH_OBJ);
             return $data;

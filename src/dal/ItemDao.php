@@ -90,6 +90,17 @@
             return $dados;
         }
 
+        function listAllItemsFromSaleGroupedByCategory($idSale){
+            $sql = 
+            "select it.name as name, count(item.id_item) as quantity, avg(item.price) as price from item
+            inner join item_type as it on item.id_item_type = it.id_item_type
+            where item.id_sale = {$idSale}
+            group by item.id_item_type";
+            $query = $this->conn->query($sql);
+            $dados = $query->fetchAll(PDO::FETCH_OBJ);            
+            return $dados;
+        }
+
         function updateSoldItems($item, $quantity, $idSeller, $idSale){
             $sql = "UPDATE item SET status = 'sold', id_sale = {$idSale}
                 WHERE status = 'active' and id_item_type = {$item} and id_seller = {$idSeller} LIMIT $quantity";

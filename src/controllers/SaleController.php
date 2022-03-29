@@ -48,6 +48,27 @@
                 $this->itemDao->updateSoldItems($items[$i], $quantity[$i], $idSeller, $idSale);
             }
             header("Location:../views/dashboard.php");  
+            exit();
+        }
+
+        function listSalesFromSellerAndItsItems(){
+            session_start();
+
+            if($_SESSION["type"] == "seller"){                
+                $sellerId = $_SESSION["idUser"];
+                $sales = $this->saleDao->listSalesFromSeller($sellerId);
+                $salesItems = [];                
+    
+                foreach($sales as $sale){                    
+                    array_push($salesItems, $this->itemDao->listAllItemsFromSaleGroupedByCategory($sale->id_sale));
+                }
+                    
+                $_SESSION["sales"] = $sales;
+                $_SESSION["salesItems"] = $salesItems;
+    
+                header("Location:../views/sales.php");
+                exit();
+            }
         }
       
     }
@@ -59,6 +80,9 @@
     switch($action){
         case 1:
             $saleController->registerNewSale();
+            break;
+        case 2:
+            $saleController->listSalesFromSellerAndItsItems();
             break;
         default:
             $saleController->configureRegisterPage();

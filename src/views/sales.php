@@ -40,93 +40,63 @@
             </form>
         </section>
 
-        <section class="sales-list none-item">
-            <div class="sale-container" >
-                <header class="sale-container__minus-button">
-                    <button class="sale-container__minuts-button--btn" >
-                        <img src="../../public/images/up-chevron.svg" alt="Diminuir">
-                    </button>
-                </header>
+        <section class="sales-list">
 
-                <ul class="basic-information">
-                    <li><strong class="information-label">Cliente: </strong>Jubileu da silva</li>
-                    <li><strong class="information-label">Data: </strong>22/03/2022- 14h00</li>
-                    <li><strong class="information-label">Total: </strong>R$ 7,40</li>
-                </ul>
+            <?php 
+                session_start();                    
+                $sales = $_SESSION["sales"];
+                $salesItems = $_SESSION["salesItems"];
+                $i = 0;
+                foreach($sales as $sale){             
+                    echo "<div class='sale-container' >
+                            <header class='sale-container__minus-button'>
+                                <button class='sale-container__minuts-button--btn' >
+                                    <img src='../../public/images/up-chevron.svg' alt='Diminuir'>
+                                </button>
+                            </header>
+                            <ul class='basic-information'>
+                                <li><strong class='information-label'>Cliente: </strong>{$sale->name}</li>
+                                <li><strong class='information-label'>Data: </strong>{$sale->date}</li>
+                                <li><strong class='information-label'>Total: </strong>{$sale->value}</li>
+                            </ul>
 
-                <ul class="other-information">
-                    <li><strong class="information-label">Pagamento: </strong>Dinheiro</li>
-                    <li><strong class="information-label">Recebido: </strong>R$ 10,00</li>
-                    <li><strong class="information-label">Troco: </strong>R$ 7,40</li>
-                    <li><strong class="information-label">Observação: </strong>Pagou depois</li>
-                </ul>
-
-                <section class="sale-items">
-                    <strong class="information-label">Itens: </strong>
-
-                    <table class="sale-items-table">
-                        <tbody>
-                            <tr class="sale-items-table__row">
-                                <td>Pão de Queijo</td>
-                                <td>R$ 2,50</td>
-                                <td>2 uni.</td>
-                            </tr>
-                            <tr class="sale-items-table__row">
-                                <td>Pão de Queijo</td>
-                                <td>R$ 2,50</td>
-                                <td>2 uni.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-            </div>
-
-            <div class="sale-container" >
-                <header class="sale-container__minus-button">
-                    <button class="sale-container__minuts-button--btn">
-                        <img src="../../public/images/up-chevron.svg" alt="Diminuir">
-                    </button>
-                </header>
-
-                <ul class="basic-information">
-                    <li><strong class="information-label">Cliente: </strong>Jubileu da silva</li>
-                    <li><strong class="information-label">Data: </strong>22/03/2022- 14h00</li>
-                    <li><strong class="information-label">Total: </strong>R$ 7,40</li>
-                </ul>
-
-                <ul class="other-information">
-                    <li><strong class="information-label">Pagamento: </strong>Dinheiro</li>
-                    <li><strong class="information-label">Recebido: </strong>R$ 10,00</li>
-                    <li><strong class="information-label">Troco: </strong>R$ 7,40</li>
-                    <li><strong class="information-label">Observação: </strong>Pagou depois</li>
-                </ul>
-
-                <section class="sale-items">
-                    <strong class="information-label">Itens: </strong>
-
-                    <table class="sale-items-table">
-                        <tbody>
-                            <tr class="sale-items-table__row">
-                                <td>Pão de Queijo</td>
-                                <td>R$ 2,50</td>
-                                <td>2 uni.</td>
-                            </tr>
-                            <tr class="sale-items-table__row">
-                                <td>Pão de Queijo</td>
-                                <td>R$ 2,50</td>
-                                <td>2 uni.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-            </div>
+                            <ul class='other-information'>
+                                <li><strong class='information-label'>Pagamento: </strong>{$sale->type}</li>
+                                <li><strong class='information-label'>Recebido: </strong>R$ {$sale->payed_value}</li>
+                                <li><strong class='information-label'>Troco: </strong>R$ {$sale->change}</li>
+                                <li><strong class='information-label'>Observação: </strong>{$sale->note}</li>
+                            </ul>
+                            <section class='sale-items'>
+                                <strong class='information-label'>Itens: </strong>
+                                <table class='sale-items-table'>
+                                    <tbody>";
+                                foreach ($salesItems[$i] as $item){                                    
+                                    echo "
+                                        <tr class='sale-items-table__row'>
+                                            <td>{$item->name}</td>
+                                            <td>R$ {$item->price}</td>
+                                            <td>{$item->quantity} uni.</td>
+                                        </tr>                                            
+                                        ";
+                                };
+                                $i ++;
+                                echo "</tbody>
+                                </table>
+                            </section>
+                        </div>";
+                }
+            ?>            
         </section>
 
-        <section class="none-item-alert">
-            <img src="../../public/images/frown.svg" alt="Sad">
-
-            <h2>Nenhuma venda registrada</h2>
-        </section>
+        <?php 
+            if(sizeof($sales) == 0){
+                echo '<section class="none-item-alert">
+                        <img src="../../public/images/frown.svg" alt="Sad">    
+                        <h2>Nenhuma venda registrada</h2>
+                    </section>';
+            }
+        ?>
+        
 
         <footer class="period-result">
             <ul class="period-result__list">

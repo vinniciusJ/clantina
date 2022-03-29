@@ -51,4 +51,9 @@
             </footer>
         </form>
     </main>
+
+    <?php include_once __DIR__ . '/components/confirmation-popup.php' ?>
+
+    <script src="../../public/scripts/back.js"></script>
+    <script src="../../public/scripts/confirmation.js"></script>
 </body>

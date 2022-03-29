@@ -41,4 +41,6 @@
             </a>
         </footer>
     </main>
+
+    <script src="../../public/scripts/back.js"></script>
 </body>

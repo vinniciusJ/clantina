@@ -17,8 +17,10 @@
 <body>
     <main class="container">
         <header class="header">
-            <img src="../../public/images/left-arrow.svg" alt="Voltar">
-            <h1>Estoque</h1>
+            <button id="go-back">
+                <img src="../../public/images/left-arrow.svg" alt="Voltar">
+            </button>
+            <h1>Nova venda</h1>
         </header>
 
         <?php
@@ -61,8 +63,10 @@
             if($_SESSION['type'] == 'seller'){
                 require_once __DIR__ . "/components/storage-new-item.php";
             }            
-        ?>
+        ?>        
 
     </main>
+
+    <script src="../../public/scripts/back.js"></script>
 </body>
 </html>

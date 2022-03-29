@@ -21,7 +21,9 @@
 <body>
     <main class="container">
         <header class="header">
-            <img src="../../public/images/left-arrow.svg" alt="Voltar">
+            <button id="go-back">
+                <img src="../../public/images/left-arrow.svg" alt="Voltar">
+            </button>
             <?php
                 echo "<h1>{$_SESSION['list-items'][0]->name}</h1>"
             ?>            
@@ -66,5 +68,7 @@
             endif;
         ?>
     </main>
+
+    <script src="../../public/scripts/back.js"></script>
 </body>
 </html>

@@ -54,15 +54,10 @@
         </form>
     </main>
 
-    <dialog id="discard-alert">
-        <section>
-            <h2>Descartar novo item?</h2>
-            <footer class="discard-alert__operations">
-                <button>Não, continuar</button>
-                <button>Descartar</button>
-            </footer>
-        </section>
-    </dialog>
+    <?php include_once __DIR__ . '/components/confirmation-popup.php'?>
+    
+    <script src="../../public/scripts/back.js"></script>
+    <script src="../../public/scripts/confirmation.js"></script>
 
 </body>
 </html> 

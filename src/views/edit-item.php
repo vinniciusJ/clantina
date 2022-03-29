@@ -47,14 +47,17 @@
         </form>
     </main>
 
-    <dialog id="discard-alert">
+    <dialog id="confirmation">
         <section>
-            <h2>Descartar Venda</h2>
-            <footer class="discard-alert__operations">
+            <h2>Descartar Edições?</h2>
+            <footer class="confirmation__operations">
                 <button>Não, continuar</button>
                 <button>Descartar</button>
             </footer>
         </section>
     </dialog>
+
+    <script src="../../public/scripts/back.js"></script>
+    <script src="../../public/scripts/confirmation.js"></script>
 </body>
 </html>

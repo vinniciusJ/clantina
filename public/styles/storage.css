@@ -9,7 +9,7 @@
     border-bottom: .25rem solid;
 }
 
-.item a{
+.item :is(a, span){
     text-decoration: none;
     width: 100%;
     display: flex;

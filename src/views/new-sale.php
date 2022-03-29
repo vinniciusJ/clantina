@@ -174,7 +174,7 @@
         selectItems.onchange = event => {            
             itemsDataList.forEach(item => {
                 if(item.idItemType == event.target.value){
-                    console.log(item);
+                    
                     const itemValues = event.target.parentElement.parentElement.childNodes[3].childNodes;
                     const qttdInput = itemValues[1].childNodes[3].childNodes[1]
                     const unitPrice = itemValues[3].childNodes[3].childNodes[1]

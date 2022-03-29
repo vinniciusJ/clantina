@@ -12,13 +12,16 @@
 }
 
 .login-header__title{
-    font-size: 7rem;
+
     font-weight: 700;
+}
+:is(.login-header__title--yellow, .login-header__title){
+    font-weight: 700;
+    font-size: 7rem;
 }
 
 .login-header__title--yellow{
     color: var(--yellow-800);
-    font-weight: 700;
 }
 
 .login-form{

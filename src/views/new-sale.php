@@ -122,7 +122,7 @@
                     <strong>Valor recebido</strong>
                     <label for="received-value">
                         <strong>R$</strong>
-                        <input type="number" min="0" name="received-value" id="received-value" type="text">
+                        <input type="number" min="0" name="received-value" id="received-value" type="text" placeholder="0,00">
                     </label>
                 </div>
     

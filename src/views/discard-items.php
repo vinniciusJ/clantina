@@ -38,9 +38,19 @@
     </footer>
     </main>
 
+    <dialog id="confirm-alert">
+        <section>
+            <h2>Descartar <?php ?> itens do tipo <?php ?>?</h2>
+            <footer class="discard-alert__operations">
+                <button>Não, manter</button>
+                <button>Descartar</button>
+            </footer>
+        </section>
+    </dialog>
+
     <dialog id="discard-alert">
         <section>
-            <h2>Descartar Venda</h2>
+            <h2>Descartar edições?</h2>
             <footer class="discard-alert__operations">
                 <button>Não, continuar</button>
                 <button>Descartar</button>

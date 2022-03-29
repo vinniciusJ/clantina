@@ -113,13 +113,13 @@
     
             <section class="payment">
                 <h2>Pagamento:</h2>
-                <select name="payment-method" id="payment-method">
+                <select class="input" name="payment-method" id="payment-method">
                     <option value="money">Dinheiro Físico</option>
                     <option value="pix">PIX</option>
                 </select>
     
                 <div class="payment__value">
-                    <strong>Valor recebido</strong>
+                    <strong>Valor recebido:</strong>
                     <label for="received-value">
                         <strong>R$</strong>
                         <input type="number" min="0" name="received-value" id="received-value" type="text" placeholder="0,00">

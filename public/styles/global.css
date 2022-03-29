@@ -117,8 +117,6 @@ strong {
 }
 
 .payment__value > strong{
-   font-weight: 600;
-   font-size: 2rem;
    margin-bottom: 2rem;
 }
 
@@ -166,6 +164,6 @@ strong {
 }
 
 .input-title {
-    font-weight: 500;
+    font-weight: 500 ;
     font-size: 3rem;
 }

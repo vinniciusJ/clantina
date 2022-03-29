@@ -14,16 +14,6 @@
    font-weight: 500;   
 }
 
-.client select{
-   border: solid .25rem var(--black-600);
-   background: none;
-
-   padding: 1rem 2.5rem;
-   border-radius: 2rem;
-   width: 100%;
-   height: 6rem;
-}
-
 .items-list{
    gap: 1.8rem;
    width: 100%;
@@ -221,4 +211,9 @@
 
 #discard-alert .discard-alert__operations button:last-of-type{
    color: var(--yellow-800);
+}
+
+.payment__value > strong{
+   font-weight: 600;
+   font-size: 2rem;
 }

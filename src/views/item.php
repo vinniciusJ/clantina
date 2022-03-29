@@ -29,7 +29,7 @@
 
         <footer class="footer">
             <button class="btn">
-                <strong>Adicionar Item <img src="../../public/images/edit.svg" alt="Finalizar"></strong>
+                <strong>Editar <img src="../../public/images/edit.svg" alt="Finalizar"></strong>
             </button>
         </footer>
     </main>

@@ -27,7 +27,7 @@
             <input type="hidden" name="action" value="1">
             <section class="client">
                 <h2>Cliente: </h2>                
-                <select name="client" id="client">
+                <select class="input" name="client" id="client">
                     <?php                        
                         session_start();
                         foreach($_SESSION["list-clients"] as $client){

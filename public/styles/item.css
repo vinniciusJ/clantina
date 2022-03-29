@@ -1,3 +1,7 @@
 .item-infos{
     font-size: 3rem;
 }
+
+.item-info:not(:last-of-type) {
+    margin-bottom: 2rem;
+}

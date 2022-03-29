@@ -14,7 +14,8 @@
 
     <title>Clantina | Login</title>
 </head>
-<body>    
+<body>
+
     <main class="container">
         <header class="login-header">
             <h1 class="login-header__title"><span class="login-header__title--yellow">Clan</span>tina</h1>

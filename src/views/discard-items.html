@@ -18,29 +18,22 @@
             <button id="go-back">
                 <img src="../../public/images/left-arrow.svg" alt="Voltar">
             </button>
-            <h1>Pão de queijo</h1>
+            <div>
+                <h1>Descartar Itens:</h1>
+                <h2>Pão de queijo</h2>
+            </div>
         </header>
 
         <form>
             <div class="fieldset">
-                <label class="input-title" for="qtd">Quantidade:</label>
-                <input class="input" type="number" id="qtd">
-            </div>
-            <div class="payment__value">
-                <strong>Preço unitário:</strong>
-                <label for="price">
-                    <strong>R$</strong>
-                    <input type="number" min="0" name="price" id="price" type="text" placeholder="0,00">
-                </label>
+                <label class="input-title" for="qtd">Quantidade a ser descartada:</label>
+                <input class="input" type="number" id="qtd" value="0">
             </div>
         </form>
 
         <footer>
-            <button type="button" class="btn btn-black">
-                <strong>Descartar Itens <img src="../../public/images/x.svg" alt="Descartar Item"></strong>
-            </button>
         <button class="btn">
-            <strong>Salvar <img src="../../public/images/check.svg" alt="Salvar"></strong>
+            <strong>Descartar <img src="../../public/images/check.svg" alt="Descartar"></strong>
         </button>
     </footer>
     </main>

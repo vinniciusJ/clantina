@@ -71,6 +71,10 @@ body{
     background-color: var(--black-600);
 }
 
+.btn.btn-black:active, .btn.btn-black:hover {
+    background-color: var(--gray-700);
+}
+
 .btn.btn-black strong {
     color: #FFF;
 }
@@ -94,6 +98,11 @@ strong {
 
 .header h1{
     font-size: 4rem;
+}
+
+.header h2 {
+    font-size: 4rem;
+    color: var(--gray-700);
 }
 
 .sm-title{

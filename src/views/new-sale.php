@@ -149,7 +149,19 @@
         </form>
     </main>
 
+<<<<<<< HEAD
     <?php include_once __DIR__ . '/components/confirmation-popup.php' ?>
+=======
+    <dialog id="discard-alert">
+        <section>
+            <h2>Descartar Venda?</h2>
+            <footer class="discard-alert__operations">
+                <button>Não, continuar</button>
+                <button>Descartar</button>
+            </footer>
+        </section>
+    </dialog>
+>>>>>>> df81f9b3f86c6a5600ba8afcffced1f89d0a2478
     
     <script>
         const selectItems = document.getElementById('items'); 

@@ -29,7 +29,7 @@
                 <input type="password" name="password" id="password" placeholder="Senha" required>
             </div>
 
-            <button class="login-form__send-button">
+            <button class="login-form__send-button" type="input">
                 <strong>Login <img src="../../public/images/right-arrow.svg" alt="Seta para a direita"></strong>
             </button>
             <input type="hidden" name="action" value="2">

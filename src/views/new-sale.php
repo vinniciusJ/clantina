@@ -135,8 +135,7 @@
             </section>
     
             <section class="observation">
-                <h2>Observação: </h2>
-                
+                <h2>Observação: </h2>                
                 <textarea name="note" id="note" cols="30" rows="10" class="observation__container">
                 </textarea>
             </section>

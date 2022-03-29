@@ -61,13 +61,7 @@
             if($_SESSION['type'] == 'seller'){
                 require_once __DIR__ . "/components/storage-new-item.php";
             }            
-        ?>
-
-        <footer>
-            <button class="btn">
-                <strong>Adicionar item <img src="../../public/images/plus.svg" alt="Finalizar"></strong>
-            </button>
-        </footer>
+        ?>        
 
     </main>
 </body>

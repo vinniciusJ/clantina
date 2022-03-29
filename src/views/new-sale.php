@@ -27,7 +27,7 @@
             <input type="hidden" name="action" value="1">
             <section class="client">
                 <h2>Cliente: </h2>                
-                <select name="client" id="client">
+                <select class="input" name="client" id="client">
                     <?php                        
                         session_start();
                         foreach($_SESSION["list-clients"] as $client){
@@ -113,13 +113,13 @@
     
             <section class="payment">
                 <h2>Pagamento:</h2>
-                <select name="payment-method" id="payment-method">
+                <select class="input" name="payment-method" id="payment-method">
                     <option value="money">Dinheiro Físico</option>
                     <option value="pix">PIX</option>
                 </select>
     
                 <div class="payment__value">
-                    <strong>Valor recebido</strong>
+                    <strong>Valor recebido:</strong>
                     <label for="received-value">
                         <strong>R$</strong>
                         <input type="number" min="0" name="received-value" id="received-value" type="text" placeholder="0,00">
@@ -149,15 +149,7 @@
         </form>
     </main>
 
-    <dialog id="discard-alert">
-        <section>
-            <h2>Descartar Venda?</h2>
-            <footer class="discard-alert__operations">
-                <button>Não, continuar</button>
-                <button>Descartar</button>
-            </footer>
-        </section>
-    </dialog>
+    <?php include_once __DIR__ . '/components/confirmation-popup.php' ?>
     
     <script>
         const selectItems = document.getElementById('items'); 
@@ -174,7 +166,7 @@
         selectItems.onchange = event => {            
             itemsDataList.forEach(item => {
                 if(item.idItemType == event.target.value){
-                    console.log(item);
+                    
                     const itemValues = event.target.parentElement.parentElement.childNodes[3].childNodes;
                     const qttdInput = itemValues[1].childNodes[3].childNodes[1]
                     const unitPrice = itemValues[3].childNodes[3].childNodes[1]
@@ -188,5 +180,6 @@
         }            
     </script>
     <script src="../../public/scripts/new-sale.js" type="module"></script>
+    <script src="../../public/scripts/confirmation.js" type="module"></script>
 </body>
 </html>

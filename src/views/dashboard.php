@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +23,7 @@
         </header>
 
         <?php
-            session_start();        
+                  
             if($_SESSION['type'] == 'seller'){
                 require_once __DIR__ . "/components/dashboard-new-sale-button.php";
             } elseif($_SESSION['type'] == 'client'){
@@ -38,6 +40,15 @@
                 <li class="dashboard-menu__item">
                     <a href="../controllers/ItemController.php?action=2">Estoque <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
                 </li>
+
+                <?php if($_SESSION['type'] == 'seller'): ?>
+                    <li class="dashboard-menu__item">
+                        <a href="">Cadastro de Usuário <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
+                    </li>
+                    <li class="dashboard-menu__item">
+                        <a href="">Tipos de item <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
+                    </li>
+                <?php endif?>
             </ul>
         </nav>
     </main>

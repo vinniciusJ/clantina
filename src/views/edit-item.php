@@ -21,7 +21,7 @@
             <h1>Pão de queijo</h1>
         </header>
 
-        <form>
+        <form method="POST">
             <div class="fieldset">
                 <label class="input-title" for="qtd">Quantidade:</label>
                 <input class="input" type="number" id="qtd">
@@ -33,16 +33,16 @@
                     <input type="number" min="0" name="price" id="price" type="text" placeholder="0,00">
                 </label>
             </div>
-        </form>
 
         <footer>
             <button type="button" class="btn btn-black">
                 <strong>Descartar Itens <img src="../../public/images/x.svg" alt="Descartar Item"></strong>
             </button>
-        <button class="btn">
-            <strong>Salvar <img src="../../public/images/check.svg" alt="Salvar"></strong>
-        </button>
-    </footer>
+            <button class="btn">
+                <strong>Salvar <img src="../../public/images/check.svg" alt="Salvar"></strong>
+            </button>
+        </footer>
+        </form>
     </main>
 
     <dialog id="discard-alert">

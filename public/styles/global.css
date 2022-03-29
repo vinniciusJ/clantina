@@ -117,8 +117,6 @@ strong {
 }
 
 .payment__value > strong{
-   font-weight: 600;
-   font-size: 2rem;
    margin-bottom: 2rem;
 }
 
@@ -153,6 +151,8 @@ strong {
 
 .fieldset {
     margin-bottom: 2rem;
+
+    border: none;
 }
 
 .input {
@@ -166,6 +166,52 @@ strong {
 }
 
 .input-title {
-    font-weight: 500;
+    font-weight: 500 ;
     font-size: 3rem;
 }
+
+#confirmation{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+ 
+    transform: translate(-50%, -50%);
+    border: none;
+ }
+ 
+ #confirmation::backdrop{
+    background: rgba(255, 255, 255, 0.8);
+ }
+ 
+ #confirmation section{
+    background-color: var(--black-600);
+  
+    width: 36rem;
+    border-radius: 2rem;
+    padding: 3rem 4rem;
+ }
+ 
+ #confirmation section h2{
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #FFF;
+ 
+    text-align: center;
+ }
+ 
+ #confirmation .confirmation__operations{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+ }
+ 
+ #confirmation .confirmation__operations button{
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: #FFF;
+ }
+ 
+ #confirmation .confirmation__operations button:last-of-type{
+    color: var(--yellow-800);
+ }

@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../../public/styles/global.css">
 
-    <title>Clantina | Editar Item</title>
+    <title>Clantina | Descartar Itens</title>
 </head>
 <body>
     <main class="container">
@@ -38,9 +38,19 @@
     </footer>
     </main>
 
+    <dialog id="confirm-alert">
+        <section>
+            <h2>Descartar <?php ?> itens do tipo <?php ?>?</h2>
+            <footer class="discard-alert__operations">
+                <button>Não, manter</button>
+                <button>Descartar</button>
+            </footer>
+        </section>
+    </dialog>
+
     <dialog id="discard-alert">
         <section>
-            <h2>Descartar Venda</h2>
+            <h2>Descartar edições?</h2>
             <footer class="discard-alert__operations">
                 <button>Não, continuar</button>
                 <button>Descartar</button>

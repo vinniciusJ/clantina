@@ -139,46 +139,6 @@
    margin-bottom: 2rem;
 }
 
-.payment__value{
-   display: flex;
-   flex-direction: column;
-}
-
-.payment__value > strong{
-   font-weight: 600;
-   font-size: 2rem;
-   margin-bottom: 2rem;
-}
-
-.payment__value label{
-   width: 100%;
-   position: relative;
-}
-
-.payment__value label > strong{
-   position: absolute;
-
-   top: 15px;
-   left: 10px;
-   font-size: 2rem;
-}
-
-.payment__value input{
-   border: solid .25rem var(--black-600);
-   background: none;
-
-   padding: 1rem 4rem;
-   border-radius: 2rem;
-   width: 100%;
-   height: 6rem;
-
-   appearance: textfield;
-}
-
-.payment__value{
-   margin-bottom: 2rem;
-}
-
 .payment__results{
    font-size: 2rem;
    margin-bottom: 2rem;

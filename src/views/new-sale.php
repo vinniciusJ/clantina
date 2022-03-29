@@ -151,7 +151,7 @@
 
     <dialog id="discard-alert">
         <section>
-            <h2>Descartar Venda</h2>
+            <h2>Descartar Venda?</h2>
             <footer class="discard-alert__operations">
                 <button>Não, continuar</button>
                 <button>Descartar</button>

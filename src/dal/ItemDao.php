@@ -92,7 +92,7 @@
 
         function listAllItemsFromSaleGroupedByCategory($idSale){
             $sql = 
-            "select it.name as name, count(item.id_item) as quantity, avg(item.price) as price from item
+            "select it.name as name, count(item.id_item) as quantity, avg(item.price) as price, avg(purchase_price) from item
             inner join item_type as it on item.id_item_type = it.id_item_type
             where item.id_sale = {$idSale}
             group by item.id_item_type";
@@ -105,5 +105,27 @@
             $sql = "UPDATE item SET status = 'sold', id_sale = {$idSale}
                 WHERE status = 'active' and id_item_type = {$item} and id_seller = {$idSeller} LIMIT $quantity";
             $this->conn->query($sql);            
+        }
+
+        function calculateAllPurchasePriceOfInactiveItemsFromSeller($idSeller){
+            $sql = 
+            "select sum(purchase_price) as cost from item
+            inner join user on item.id_seller = user.id_user
+            where item.id_seller = {$idSeller} and item.status != 'active'
+            group by item.id_seller";
+            $query = $this->conn->query($sql);
+            $dados = $query->fetchAll(PDO::FETCH_OBJ);            
+            return $dados;
+        }
+
+        function calculateAllPurchasePriceOfInactiveItems(){
+            $sql = 
+            "select sum(purchase_price) as cost from item
+            inner join user on item.id_seller = user.id_user
+            where item.status != 'active'
+            group by item.id_seller";
+            $query = $this->conn->query($sql);
+            $dados = $query->fetchAll(PDO::FETCH_OBJ);            
+            return $dados;
         }
     }

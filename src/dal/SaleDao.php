@@ -15,15 +15,17 @@
             return $idSale;
         }
 
-        function listAllSalesWithItems() {
-            $sql = "SELECT * FROM sale";
+        function listAllSales() {
+            $sql = "select sale.id_sale, sale.value, sale.type, sale.change, sale.payed_value, sale.date, sale.note, client.name as client, seller.name as seller from sale
+            inner join user as client on sale.id_client = client.id_user
+            inner join user as seller on sale.id_seller = seller.id_user;";
             $query = $this->conn->query($sql);
             $data = $query->fetchAll(PDO::FETCH_OBJ);
             return $data;
         }
 
         function listSalesFromSeller($idSeller) {
-            $sql = "select sale.id_sale, sale.value, sale.type, sale.change, sale.payed_value, sale.date, sale.note, user.name from sale
+            $sql = "select sale.id_sale, sale.value, sale.type, sale.change, sale.payed_value, sale.date, sale.note, user.name as client from sale
             inner join user on sale.id_client = user.id_user
             where sale.id_seller = {$idSeller};";
             $sql;

@@ -51,18 +51,47 @@
             exit();
         }
 
-        function listSalesFromSellerAndItsItems(){
+        function listSales(){
             session_start();
+            $allReceivedMoney = 0;
+            $allSpentMoney = 0;
 
             if($_SESSION["type"] == "seller"){                
                 $sellerId = $_SESSION["idUser"];
                 $sales = $this->saleDao->listSalesFromSeller($sellerId);
                 $salesItems = [];                
     
-                foreach($sales as $sale){                    
+                foreach($sales as $sale){      
+                    $allReceivedMoney += $sale->value;              
                     array_push($salesItems, $this->itemDao->listAllItemsFromSaleGroupedByCategory($sale->id_sale));
                 }
-                    
+                $allSpentMoney = $this->itemDao->calculateAllPurchasePriceOfInactiveItemsFromSeller($sellerId)[0]->cost;
+                $profit = $allReceivedMoney - $allSpentMoney;                    
+
+                $_SESSION["allReceivedMoney"] = $allReceivedMoney;
+                $_SESSION["allSpentMoney"] = $allSpentMoney;
+                $_SESSION["profit"] = $profit;
+                $_SESSION["sales"] = $sales;
+                $_SESSION["salesItems"] = $salesItems;
+    
+                header("Location:../views/sales.php");
+                exit();
+            } else{
+                $sales = $this->saleDao->listAllSales();
+                $salesItems = [];                
+                                
+    
+                foreach($sales as $sale){                    
+                    $allReceivedMoney += $sale->value;
+                    $items = $this->itemDao->listAllItemsFromSaleGroupedByCategory($sale->id_sale);                    
+                    array_push($salesItems, $items);
+                }
+                $allSpentMoney = $this->itemDao->calculateAllPurchasePriceOfInactiveItems()[0]->cost;                
+                $profit = $allReceivedMoney - $allSpentMoney;                    
+
+                $_SESSION["allReceivedMoney"] = $allReceivedMoney;
+                $_SESSION["allSpentMoney"] = $allSpentMoney;
+                $_SESSION["profit"] = $profit;
                 $_SESSION["sales"] = $sales;
                 $_SESSION["salesItems"] = $salesItems;
     
@@ -82,7 +111,7 @@
             $saleController->registerNewSale();
             break;
         case 2:
-            $saleController->listSalesFromSellerAndItsItems();
+            $saleController->listSales();
             break;
         default:
             $saleController->configureRegisterPage();

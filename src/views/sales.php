@@ -55,7 +55,14 @@
                                 </button>
                             </header>
                             <ul class='basic-information'>
-                                <li><strong class='information-label'>Cliente: </strong>{$sale->name}</li>
+                            ";
+
+                            if($_SESSION["type"] == "admin"){
+                                echo "<li><strong class='information-label'>Vendedor: </strong>{$sale->seller}</li>";
+                            }
+
+                            echo "
+                                <li><strong class='information-label'>Cliente: </strong>{$sale->client}</li>
                                 <li><strong class='information-label'>Data: </strong>{$sale->date}</li>
                                 <li><strong class='information-label'>Total: </strong>{$sale->value}</li>
                             </ul>
@@ -95,14 +102,13 @@
                         <h2>Nenhuma venda registrada</h2>
                     </section>';
             }
-        ?>
-        
+        ?> 
 
         <footer class="period-result">
             <ul class="period-result__list">
-                <li><strong class="information-label">Valor bruto: </strong>R$ 150,00</li>
-                <li><strong class="information-label">Despesas: </strong>R$ 100,85</li>
-                <li><strong class="information-label">Lucro: </strong>R$ 49,15</li>
+                <li><strong class="information-label">Valor bruto: </strong>R$ <?php echo "{$_SESSION['allReceivedMoney']}" ?></li>
+                <li><strong class="information-label">Despesas: </strong>R$ <?php echo "{$_SESSION['allSpentMoney']}" ?></li>
+                <li><strong class="information-label">Lucro: </strong>R$ <?php echo "{$_SESSION['profit']}" ?></li>
             </ul>
         </footer>
     </main>

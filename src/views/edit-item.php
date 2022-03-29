@@ -36,7 +36,7 @@
         </form>
 
         <footer>
-            <button class="btn btn-black">
+            <button type="button" class="btn btn-black">
                 <strong>Descartar Item <img src="../../public/images/x.svg" alt="Finalizar"></strong>
             </button>
         <button class="btn">

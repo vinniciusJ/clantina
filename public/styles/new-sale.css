@@ -165,3 +165,8 @@
 .new-sale-footer .btn{
    width: 100% !important;
 }
+
+.total-price {
+   border: none;
+   appearance: textfield
+}

@@ -127,10 +127,10 @@
                 </div>
     
                 <div class="payment__results">
-                    <strong>Total da venda:</strong> R$ <input type="number" value="5" name="value" class="total-price"></input>
+                    <strong>Total da venda:</strong> R$ <input type="number" value="5" name="value" class="total-price" readonly></input>
                 </div>
                 <div class="payment__results">
-                    Troco: R$ <input type="number" class="total-price" value="0" name="change"></input>
+                    Troco: R$ <input type="number" class="total-price" value="0" name="change" readonly></input>
                 </div>
             </section>
     

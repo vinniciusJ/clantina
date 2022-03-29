@@ -24,20 +24,25 @@
             ?>            
         </header>   
 
-        <section class="item-infos">
-            <p class="item-info"><strong>Quantidade: </strong><span><?php echo $_SESSION['list-items'][0]->quantity ?></span> uni.</p>
-            <p class="item-info"><strong>Preço: </strong>R$ <span><?php echo $_SESSION['list-items'][0]->price ?></span></p>
+        <section class="item-infos">            
             <?php 
                 if($_SESSION["type"] == "seller"){
+                    echo "<p class='item-info'><strong>Quantidade: </strong><span> {$_SESSION['list-items'][0]->quantity} </span> uni.</p>";
+                    echo "<p class='item-info'><strong>Preço: </strong>R$ <span>{$_SESSION['list-items'][0]->price} </span></p>";
                     echo "<p class='item-info'><strong>Custo: </strong>R$ <span> {$_SESSION['list-items'][0]->purchase_price}</span></p>";
                     echo "<footer class='footer'>
                             <button class='btn'>
-                                <strong>Adicionar Item <img src='../../public/images/edit.svg' alt='Finalizar'></strong>
+                                <strong>Editar Item <img src='../../public/images/edit.svg' alt='Finalizar'></strong>   
                             </button>
                         </footer>";
                     }
                     else{
-                        echo "<p class='item-info'><strong>Vendedor: </strong><span> {$_SESSION['list-items'][0]->seller}</span></p>";
+                        foreach($_SESSION['list-items'] as $item){
+                            echo "<p class='item-info'><strong>Quantidade: </strong><span> {$item->quantity} </span> uni.</p>";
+                            echo "<p class='item-info'><strong>Preço: </strong>R$ <span>{$item->price} </span></p>";
+                            echo "<p class='item-info'><strong>Vendedor: </strong><span> {$item->seller}</span></p>";
+                        }
+                        
                     }
             ?>            
         </section>

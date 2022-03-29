@@ -36,9 +36,16 @@
                     echo "<p class='item-info'><strong>Preço: </strong>R$ <span>{$_SESSION['list-items'][0]->price} </span></p>";
                     echo "<p class='item-info'><strong>Custo: </strong>R$ <span> {$_SESSION['list-items'][0]->purchase_price}</span></p>";
                     echo "<footer class='footer'>
-                            <button class='btn'>
-                                <strong>Editar Item <img src='../../public/images/edit.svg' alt='Finalizar'></strong>   
-                            </button>
+                            <a class='link-btn' href='edit-item.php/{$_SESSION['idUser']}'>
+                                <button class='btn'>
+                                    <strong>Editar Item <img src='../../public/images/edit.svg' alt='Editar Item'></strong>
+                                </button>
+                            </a>
+                            <a class='link-btn' href='discard-items.php/{$_SESSION['idUser']}'>
+                                <button type='button' class='btn btn-black'>
+                                    <strong>Descartar Itens <img src='../../public/images/x.svg' alt='Descartar Item'></strong>
+                                </button>
+                            </a>
                         </footer>";
                     }
                     else{
@@ -52,21 +59,6 @@
             ?>            
         </section>
 
-        <?php
-            if($_SESSION['type'] == 'seller'):
-        ?>
-
-        <footer class="footer">
-            <a href="edit-item.php/<?php echo $test='id=123' ?>">
-                <button class="btn">
-                    <strong>Editar Item <img src="../../public/images/plus.svg" alt="Finalizar"></strong>
-                </button>
-            </a>
-        </footer>
-
-        <?php
-            endif;
-        ?>
     </main>
 
     <script src="../../public/scripts/back.js"></script>

@@ -35,11 +35,6 @@
             </div>
 
         <footer>
-            <a href="discard-items.php/">
-                <button type="button" class="btn btn-black">
-                    <strong>Descartar Itens <img src="../../public/images/x.svg" alt="Descartar Item"></strong>
-                </button>
-            </a>
             <button class="btn">
                 <strong>Salvar <img src="../../public/images/check.svg" alt="Salvar"></strong>
             </button>

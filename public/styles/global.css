@@ -38,6 +38,16 @@ body{
 .footer {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.link-btn {
+    height: 8rem;
+    width: 100%;
+}
+
+.link-btn:last-of-type{
+    margin-top: 2rem;
 }
 
 .btn{  

@@ -63,12 +63,6 @@
             }            
         ?>
 
-        <footer>
-            <button class="btn">
-                <strong>Adicionar item <img src="../../public/images/plus.svg" alt="Finalizar"></strong>
-            </button>
-        </footer>
-
     </main>
 </body>
 </html>

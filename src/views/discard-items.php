@@ -29,13 +29,13 @@
                 <label class="input-title" for="qtd">Quantidade a ser descartada:</label>
                 <input class="input" type="number" id="qtd" value="0">
             </div>
-        </form>
 
-        <footer>
-        <button class="btn">
-            <strong>Descartar <img src="../../public/images/check.svg" alt="Descartar"></strong>
-        </button>
-    </footer>
+            <footer>
+                <button class="btn">
+                    <strong>Descartar <img src="../../public/images/check.svg" alt="Descartar"></strong>
+                </button>
+            </footer>
+        </form>
     </main>
 
     <dialog id="confirm-alert">

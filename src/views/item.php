@@ -1,3 +1,7 @@
+<?php
+    session_start();                
+?>  
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,14 +16,13 @@
 
     <link rel="stylesheet" href="../../public/styles/item.css">
 
-    <title>Clantina | Item:Pão de queijo</title>
+    <title>Clantina | <?php echo "<h1>{$_SESSION['list-items'][0]->name}</h1>" ?>   </title>
 </head>
 <body>
     <main class="container">
         <header class="header">
             <img src="../../public/images/left-arrow.svg" alt="Voltar">
             <?php
-                session_start();                
                 echo "<h1>{$_SESSION['list-items'][0]->name}</h1>"
             ?>            
         </header>   
@@ -47,6 +50,21 @@
             ?>            
         </section>
 
+        <?php
+            if($_SESSION['type'] == 'seller'):
+        ?>
+
+        <footer class="footer">
+            <a href="edit-item.php/<?php echo $test='id=123' ?>">
+                <button class="btn">
+                    <strong>Editar Item <img src="../../public/images/plus.svg" alt="Finalizar"></strong>
+                </button>
+            </a>
+        </footer>
+
+        <?php
+            endif;
+        ?>
     </main>
 </body>
 </html>

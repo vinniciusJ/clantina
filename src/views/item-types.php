@@ -34,9 +34,11 @@
         </ul>
 
         <footer>
-            <button class="btn">
-                <strong>Criar tipo de Item <img src="../../public/images/plus.svg" alt="Finalizar"></strong>
-            </button>
+            <a href="new-item-type.php">
+                <button class="btn">
+                    <strong>Criar tipo de Item <img src="../../public/images/plus.svg" alt="Finalizar"></strong>
+                </button>
+            </a>
         </footer>
     </main>
 </body>

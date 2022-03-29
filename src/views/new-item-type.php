@@ -18,12 +18,12 @@
             <button id="go-back">
                 <img src="../../public/images/left-arrow.svg" alt="Voltar">
             </button>
-            <h1>Cadastro de Usuário</h1>
+            <h1>Cadastro de Tipo de Item</h1>
         </header>
 
         <form action="">
             <fieldset class="fieldset">
-                <label for="item-type" class="input-title">Tipo de Usuário: </label>
+                <label for="item-type" class="input-title">Nome de tipo de item: </label>
                 <input type="text" name="item-type" id="item-type" class="input">
             </fieldset>
 

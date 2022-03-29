@@ -178,6 +178,8 @@
             })                        
         }            
     </script>
+
+    <script src="../../public/scripts/back.js"></script>
     <script src="../../public/scripts/new-sale.js" type="module"></script>
     <script src="../../public/scripts/confirmation.js" type="module"></script>
 </body>

@@ -1,5 +1,4 @@
 const discardModal = document.querySelector('#confirmation')
-const goBackButton = document.querySelector('#go-back')
 
 const showDiscardAlert = () => {
     discardModal.showModal()
@@ -20,5 +19,7 @@ const showDiscardAlert = () => {
 
     document.body.style.overflow = 'hidden'
 }
+
+goBackButton.removeEventListener('click', handleGoBack)
 
 goBackButton.addEventListener('click', () => showDiscardAlert())

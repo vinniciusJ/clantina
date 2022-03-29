@@ -57,5 +57,7 @@
             </footer>
         </section>
     </dialog>
+
+    <script src="../../public/scripts/back.js"></script>
 </body>
 </html>

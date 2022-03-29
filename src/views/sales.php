@@ -114,5 +114,6 @@
     </main>
 
     <script src="../../public/scripts/sales.js" type="module"></script>
+    <script src="../../public/scripts/back.js"></script>
 </body>
 </html>

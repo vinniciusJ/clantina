@@ -33,10 +33,14 @@
             <li class="item"><span>Pão de Queijo</span></li>
         </ul>
 
-        <footer>
-            <button class="btn">
-                <strong>Criar tipo de Item <img src="../../public/images/plus.svg" alt="Finalizar"></strong>
-            </button>
-        </footer>
+        <form action="">
+            <footer>
+                <button class="btn">
+                    <strong>Criar tipo de Item <img src="../../public/images/plus.svg" alt="Finalizar"></strong>
+                </button>
+            </footer>
+        </form>
     </main>
+
+    <script src="../../public/scripts/back.js"></script>
 </body>

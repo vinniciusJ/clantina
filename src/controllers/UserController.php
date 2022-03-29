@@ -32,7 +32,7 @@
                 $_SESSION['idUser'] = $user->id_user;
                 
                 if($user->type == 'client'){                    
-                    header("Location:../views/storage.php");     
+                    header("Location: ./ItemController.php?action=2");     
                     exit();
                 } else{
                     header("Location:../views/dashboard.php");  
@@ -50,7 +50,9 @@
     switch($action){
         case 1:
             $userController->registerUser();
+            break;
         case 2:
             $userController->login();
+            break;
     }
     

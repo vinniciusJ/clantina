@@ -18,20 +18,30 @@
     <main class="container">
         <header class="header">
             <img src="../../public/images/left-arrow.svg" alt="Voltar">
-            <h1>Pão de queijo</h1>
-        </header>
+            <?php
+                session_start();                
+                echo "<h1>{$_SESSION['list-items'][0]->name}</h1>"
+            ?>            
+        </header>   
 
         <section class="item-infos">
-            <p class="item-info"><strong>Quantidade: </strong><span>22</span> uni.</p>
-            <p class="item-info"><strong>Preço: </strong>R$ <span>2,50</span></p>
-            <p class="item-info"><strong>Custo: </strong>R$ <span>1,00</span></p>
+            <p class="item-info"><strong>Quantidade: </strong><span><?php echo $_SESSION['list-items'][0]->quantity ?></span> uni.</p>
+            <p class="item-info"><strong>Preço: </strong>R$ <span><?php echo $_SESSION['list-items'][0]->price ?></span></p>
+            <?php 
+                if($_SESSION["type"] == "seller"){
+                    echo "<p class='item-info'><strong>Custo: </strong>R$ <span> {$_SESSION['list-items'][0]->purchase_price}</span></p>";
+                    echo "<footer class='footer'>
+                            <button class='btn'>
+                                <strong>Adicionar Item <img src='../../public/images/edit.svg' alt='Finalizar'></strong>
+                            </button>
+                        </footer>";
+                    }
+                    else{
+                        echo "<p class='item-info'><strong>Vendedor: </strong><span> {$_SESSION['list-items'][0]->seller}</span></p>";
+                    }
+            ?>            
         </section>
 
-        <footer class="footer">
-            <button class="btn">
-                <strong>Adicionar Item <img src="../../public/images/edit.svg" alt="Finalizar"></strong>
-            </button>
-        </footer>
     </main>
 </body>
 </html>

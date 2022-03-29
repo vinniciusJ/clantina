@@ -27,14 +27,14 @@
 
         ?>
 
-        <section class="items">
-            <ul>
-                <li class="item"><a href="">Pão de queijo <img src="../../public/images/chevron-right.svg"></a></li>
-                <li class="item"><a href="">Pão de queijo <img src="../../public/images/chevron-right.svg"></a></li>
-                <li class="item"><a href="">Pão de queijo <img src="../../public/images/chevron-right.svg"></a></li>
-                <li class="item"><a href="">Pão de queijo <img src="../../public/images/chevron-right.svg"></a></li>
-                <li class="item"><a href="">Pão de queijo <img src="../../public/images/chevron-right.svg"></a></li>
-                <li class="item"><a href="">Pão de queijo <img src="../../public/images/chevron-right.svg"></a></li>
+        <section class="items">            
+            <ul>               
+            <?php
+            session_start();            
+                foreach($_SESSION['list-items'] as $item){
+                    echo "<li class='item'><a href='../controllers/ItemController.php?action=1&id={$item->id}'> {$item->name} <img src='../../public/images/chevron-right.svg'></a></li>";
+                }
+            ?> 
             </ul>
         </section>
 
@@ -57,11 +57,13 @@
             endif;
         ?>
 
-        <footer class="footer">
-            <button class="btn">
-                <strong>Adicionar Item <img src="../../public/images/plus.svg" alt="Finalizar"></strong>
-            </button>
-        </footer>
+        <?php
+            if($_SESSION['type'] == 'seller'){
+                require_once __DIR__ . "/components/storage-new-item.php";
+            }            
+        ?>
+
+        
     </main>
 </body>
 </html>

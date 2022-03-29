@@ -36,7 +36,7 @@
                     <a href="">Vendas <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
                 </li>
                 <li class="dashboard-menu__item">
-                    <a href="">Estoque <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
+                    <a href="../controllers/ItemController.php?action=2">Estoque <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
                 </li>
             </ul>
         </nav>

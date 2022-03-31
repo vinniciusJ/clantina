@@ -23,10 +23,7 @@
 
         function list(){
             session_start();
-            $_SESSION["itemsTypes"] = $this->dao->listItemTypes();
-
-            header("Location: ../views/new-item.php");
-            exit();
+            $_SESSION["itemsTypes"] = $this->dao->listItemTypes();            
         }
     }
 
@@ -39,6 +36,12 @@
             $itemTypeController->registerItemType();
             break;
         case 2:
-            $itemTypeController->list();
+            $itemTypeController->list();   
+            header("Location: ../views/new-item.php");
+            exit();    
+        case 3:
+            $itemTypeController->list();       
+            header("Location: ../views/item-types.php");
+            exit();
     }
     

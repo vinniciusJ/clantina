@@ -24,13 +24,12 @@
         </header>
 
         <ul class="items">
-            <li class="item"><span>Pão de Queijo</span></li>
-            <li class="item"><span>Pão de Queijo</span></li>
-            <li class="item"><span>Pão de Queijo</span></li>
-            <li class="item"><span>Pão de Queijo</span></li>
-            <li class="item"><span>Pão de Queijo</span></li>
-            <li class="item"><span>Pão de Queijo</span></li>
-            <li class="item"><span>Pão de Queijo</span></li>
+            <?php 
+            session_start();
+            foreach($_SESSION["itemsTypes"] as $type){
+                echo "<li class='item'><span>{$type->name}</span></li>";
+            }
+            ?>                        
         </ul>
 
         <footer>

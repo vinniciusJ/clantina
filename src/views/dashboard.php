@@ -46,7 +46,7 @@
                         <a href="new-user.php">Cadastro de Usuário <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
                     </li>
                     <li class="dashboard-menu__item">
-                        <a href="item-types.php">Tipos de item <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
+                        <a href="../controllers/ItemTypeController.php?action=3">Tipos de item <span class="dashboard-menu__item--chevron"><img src="../../public/images/right-chevron.svg" alt="Seta apontando para direits"></span></a>
                     </li>
                 <?php endif?>
             </ul>

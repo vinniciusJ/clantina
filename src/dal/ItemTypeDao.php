@@ -14,7 +14,7 @@
         }
 
         function listItemTypes() {
-            $sql = "SELECT * FROM itemType";
+            $sql = "SELECT * FROM item_type";
             $query = $this->conn->query($sql);
             $data = $query->fetchAll(PDO::FETCH_OBJ);
             return $data;

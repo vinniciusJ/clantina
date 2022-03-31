@@ -18,6 +18,15 @@
             $this->dao->insertItemType($itemType);
 
             header("Location: ../views/item-types.php");
+            exit();
+        }
+
+        function list(){
+            session_start();
+            $_SESSION["itemsTypes"] = $this->dao->listItemTypes();
+
+            header("Location: ../views/new-item.php");
+            exit();
         }
     }
 
@@ -29,5 +38,7 @@
         case 1:
             $itemTypeController->registerItemType();
             break;
+        case 2:
+            $itemTypeController->list();
     }
     

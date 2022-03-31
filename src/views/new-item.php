@@ -21,28 +21,35 @@
             <h1>Adicionar Item</h1>
         </header>
 
-        <form method="POST">
+        <form method="POST" action="../controllers/ItemController.php?action=4">
             <div class="fieldset">
-                <label class="input-title" for="item-type">Tipo de item:</label>
+                <label class="input-title" for="item-type">Tipo de item:</label>                
                 <select class="input" name="item-type" id="item-type">
+                <?php
+                    session_start();
+                    var_dump($_SESSION);
+                    foreach($_SESSION["itemsTypes"] as $itemType){
+                        echo "<option value='{$itemType->id_item_type}'>{$itemType->name}</option>";
+                    }
+                ?>
                 </select>
             </div>
             <div class="fieldset">
                 <label class="input-title" for="qtd">Quantidade:</label>
-                <input class="input" type="number" id="qtd">
+                <input class="input" type="number" id="qtd" name="qtd">
             </div>
             <div class="payment__value">
                 <strong class="input-title">Custo unitário:</strong>
                 <label for="coast">
                     <strong>R$</strong>
-                    <input type="number" min="0" name="coast" id="coast" type="text" placeholder="0,00">
+                    <input type="number" min="0" name="coast" id="coast" type="text" placeholder="0,00" step="0.01">
                 </label>
             </div>
             <div class="payment__value">
                 <strong class="input-title">Preço unitário:</strong>
                 <label for="price">
                     <strong>R$</strong>
-                    <input type="number" min="0" name="price" id="price" type="text" placeholder="0,00">
+                    <input type="number" min="0" name="price" id="price" type="text" placeholder="0,00" step="0.01">
                 </label>
             </div>
 

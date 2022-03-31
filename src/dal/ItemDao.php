@@ -138,7 +138,7 @@
 
         function addItemsForSeller(Item $item){
             $sql = "INSERT INTO item(id_item_type, status, purchase_price, price, id_seller) 
-            VALUES ('{$item->getIdItemType()}', '{$item->getStatus()}', '{$item->getPurchasePrice()}', '{$item->getPrice()}', {$item->getIdSeller()}";
+            VALUES ('{$item->getIdItemType()}', '{$item->getStatus()}', '{$item->getPurchasePrice()}', '{$item->getPrice()}', {$item->getIdSeller()})";            
             $this->conn->exec($sql);
         }
 

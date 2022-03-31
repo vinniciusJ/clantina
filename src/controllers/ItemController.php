@@ -39,9 +39,18 @@
         }
 
         function updateItemsFromSeller(){
-            session_start();
-            var_dump($_SESSION);
+            session_start();            
             $this->dao->updateItemsPriceFromSeller($_SESSION["idUser"], $_SESSION["itemTypeId"], $_POST["price"]);
+            header("Location: ../views/dashboard.php");     
+            exit(); 
+        }
+
+        function registerItems(){
+            session_start();
+            for ($i=0; $i < $_POST["qtd"]; $i++) { 
+                $item = new Item($_POST["item-type"], 'active', $_POST['coast'], $_POST['price'], $_SESSION["idUser"]);                
+                $this->dao->addItemsForSeller($item);                
+            }                        
             header("Location: ../views/dashboard.php");     
             exit(); 
         }
@@ -60,6 +69,10 @@
             break;  
         case 3:
             $itemController->updateItemsFromSeller();
+            break;
+        
+        case 4:
+            $itemController->registerItems();
             break;
 
         default:

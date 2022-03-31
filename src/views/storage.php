@@ -20,7 +20,7 @@
             <button id="go-back">
                 <img src="../../public/images/left-arrow.svg" alt="Voltar">
             </button>
-            <h1>Nova venda</h1>
+            <h1>Estoque</h1>
         </header>
 
         <?php

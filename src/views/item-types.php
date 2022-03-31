@@ -20,7 +20,7 @@
             <button id="go-back">
                 <img src="../../public/images/left-arrow.svg" alt="Voltar">
             </button>
-            <h1>Cadastro de Usuário</h1>
+            <h1>Tipos de Item</h1>
         </header>
 
         <ul class="items">

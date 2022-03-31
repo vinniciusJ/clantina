@@ -18,7 +18,7 @@
             <button id="go-back">
                 <img src="../../public/images/left-arrow.svg" alt="Voltar">
             </button>
-            <h1>Cadastro de Tipo de Item</h1>
+            <h1>Novo Tipo de Item</h1>
         </header>
 
         <form action="../controllers/ItemTypeController.php" method="POST">

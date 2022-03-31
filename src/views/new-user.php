@@ -18,7 +18,7 @@
             <button id="go-back">
                 <img src="../../public/images/left-arrow.svg" alt="Voltar">
             </button>
-            <h1>Cadastro de Usuário</h1>
+            <h1>Novo Usuário</h1>
         </header>
         <form action="../controllers/UserController.php" method="POST">
             <fieldset class="fieldset">

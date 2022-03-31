@@ -55,6 +55,13 @@
             header("Location: ../views/dashboard.php");     
             exit(); 
         }
+
+        function discardItems(){
+            session_start();            
+            $this->dao->discardItemsFromSeller($_SESSION["idUser"], $_SESSION['list-items'][0]->id, $_POST["qtd"]);
+            header("Location: ../views/dashboard.php");     
+            exit(); 
+        }
     }
 
     $itemController = new ItemController();
@@ -76,6 +83,9 @@
             $itemController->registerItems();
             break;
 
+        case 5:
+            $itemController->discardItems();
+            break;
         default:
             $itemController->listStorageItems();
     }

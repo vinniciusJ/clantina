@@ -27,14 +27,14 @@
             </div>
         </header>
 
-        <form>
+        <form method="POST" action="../controllers/ItemController.php?action=5">
             <div class="fieldset">
                 <label class="input-title" for="qtd">Quantidade a ser descartada:</label>
-                <input class="input" type="number" id="qtd" value="0" min=0 max=<?php echo "{$_SESSION['list-items'][0]->quantity}" ?> >
+                <input class="input" type="number" id="qtd" name="qtd" value="0" min=0 max=<?php echo "{$_SESSION['list-items'][0]->quantity}" ?> >
             </div>
 
             <footer>
-                <button class="btn">
+                <button class="btn" type="submit">
                     <strong>Descartar <img src="../../public/images/check.svg" alt="Descartar"></strong>
                 </button>
             </footer>

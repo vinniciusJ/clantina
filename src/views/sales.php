@@ -22,24 +22,7 @@
             </button>
             <h1>Vendas</h1>
         </header>
-
-        <section class="period-container">
-            <h2 class="sm-title">Período: </h2>
-
-            <form action="" method="post" id="period-form">
-                <label class="period-container__input" for="initial-date">
-                    <img src="../../public/images/calendar.svg" alt="Data">
-                    <input type="date" name="initial-date" id="initial-date">
-                </label>
-                <strong>-</strong>
-                <label class="period-container__input" for="final-date">
-                    <img src="../../public/images/calendar.svg" alt="Data">
-                    <input type="date" name="final-date" id="final-date">
-                </label>
-                 
-            </form>
-        </section>
-
+    
         <section class="sales-list">
 
             <?php 

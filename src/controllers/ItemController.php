@@ -17,9 +17,9 @@
             session_start();
 
             if($_SESSION['type'] == 'seller'){
-                $_SESSION["list-items"] = $this->dao->listActiveItemsFromSellerWithId($_SESSION['idUser']);                
+                $_SESSION["list-items-categories"] = $this->dao->listActiveItemsFromSellerWithId($_SESSION['idUser']);                
             } else{
-                $_SESSION["list-items"] = $this->dao->listAllActiveItemsGroupedByCategory();               
+                $_SESSION["list-items-categories"] = $this->dao->listAllActiveItemsGroupedByCategory();               
             }
             header("Location: ../views/storage.php");     
             exit();                

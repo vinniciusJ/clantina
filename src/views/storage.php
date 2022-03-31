@@ -33,7 +33,7 @@
             <ul>               
             <?php
             session_start();            
-                foreach($_SESSION['list-items'] as $item){
+                foreach($_SESSION['list-items-categories'] as $item){
                     echo "<li class='item'><a href='../controllers/ItemController.php?action=1&id={$item->id}'> {$item->name} <img src='../../public/images/chevron-right.svg'></a></li>";
                 }
             ?> 

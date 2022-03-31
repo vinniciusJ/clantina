@@ -21,7 +21,7 @@
             <h1>Cadastro de Tipo de Item</h1>
         </header>
 
-        <form action="">
+        <form action="../controllers/ItemTypeController.php" method="POST">
             <fieldset class="fieldset">
                 <label for="item-type" class="input-title">Nome de tipo de item: </label>
                 <input type="text" name="item-type" id="item-type" class="input">
@@ -32,6 +32,7 @@
                     <strong>Salvar <img src="../../public/images/check.svg" alt="Finalizar"></strong>
                 </button>
             </footer>
+            <input type="hidden" name="action" value="1">
         </form>
     </main>
 

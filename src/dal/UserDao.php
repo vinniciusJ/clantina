@@ -6,9 +6,9 @@
         function __construct(){
             $this->conn = Connection::connect();
         }
+        
         function insertUser(User $user){
-            $sql = "insert into user(name, username, password, type) 
-            values ('{$user->getName()}', '{$user->getUsername()}', '{$user->getPassword()}', '{$user->getType()}'";
+            $sql = "insert into `user`(`name`, `username`, `password`, `type`) values ('{$user->getName()}', '{$user->getUsername()}', '{$user->getPassword()}', '{$user->getType()}')";
             $this->conn->exec($sql);
         }
 

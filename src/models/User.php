@@ -5,7 +5,15 @@ class User {
     private $username;
     private $password;
     private $type;    
-    private $name;    
+    private $name;
+
+    function __construct($name, $username, $password, $type)
+    {
+        $this->name = $name;
+        $this->username = $username;
+        $this->password = $password;
+        $this->type = $type;
+    }
 
     public function getId()
     {

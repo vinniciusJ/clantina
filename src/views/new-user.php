@@ -20,20 +20,17 @@
             </button>
             <h1>Cadastro de Usuário</h1>
         </header>
-        <form action="" method="POST">
+        <form action="../controllers/UserController.php" method="POST">
             <fieldset class="fieldset">
                 <label for="user-type" class="input-title">Tipo de Usuário: </label>
-                <select name="user-type" id="user-type" class="input">
-                    <option value="">Vendedor</option>
+                <select name="type" id="user-type" class="input">
+                    <option value="seller">Vendedor</option>
+                    <option value="client">Cliente</option>
                 </select>
             </fieldset>
             <fieldset class="fieldset">
                 <label for="name" class="input-title">Nome: </label>
-                <input type="text" class="input" name="user-type" id="user-type" class="input">
-            </fieldset>
-            <fieldset class="fieldset">
-                <label for="whatsapp" class="input-title">WhatsApp: </label>
-                <input type="text" name="whatsapp" id="whatsapp" class="input">
+                <input type="text" class="input" name="name" id="name" class="input">
             </fieldset>
             <fieldset class="fieldset">
                 <label for="username" class="input-title">Username: </label>
@@ -49,6 +46,7 @@
                     <strong>Finalizar <img src="../../public/images/check.svg" alt="Finalizar"></strong>
                 </button>
             </footer>
+            <input type="hidden" name="action" value="1">
         </form>
     </main>
 

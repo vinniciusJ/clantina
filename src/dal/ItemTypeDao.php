@@ -8,7 +8,8 @@
         }
 
         function insertItemType(ItemType $itemType) {
-            $sql = "INSERT INTO itemType (name) VALUE ('{$itemType->getName()}'";
+            $sql = "INSERT INTO item_type (name) VALUE ('{$itemType->getName()}')";
+            var_dump($sql);
             $this->conn->exec($sql);
         }
 

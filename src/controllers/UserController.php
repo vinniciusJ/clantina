@@ -14,8 +14,10 @@
         }
 
         function registerUser(){
-            $user = new User($_POST["name"], $_POST["username"], $_POST["password"], $_POST["type"]);            
+            $user = new User($_POST["name"], $_POST["username"], $_POST["password"], $_POST["type"]);
             $this->dao->insertUser($user);
+
+            header("Location: ../views/login.php");
         }
 
         function login(){                        

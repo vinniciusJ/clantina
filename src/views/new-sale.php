@@ -48,7 +48,7 @@
                                     }
                                 ?>                                
                             </select>
-                            <button><img src="../../public/images/trash.svg" alt="Excluir item"></button> 
+                            <button type="button"><img src="../../public/images/trash.svg" alt="Excluir item"></button> 
                         </header>                        
                         <section class="item-container__info">
                             <div class="item-container__info--list">
@@ -83,7 +83,7 @@
                                     }
                                 ?>       
                                 </select>
-                                <button><img src="../../public/images/trash.svg" alt="Excluir item"></button> 
+                                <button type="button"><img src="../../public/images/trash.svg" alt="Excluir item"></button> 
                             </header>
                             
                             <section class="item-container__info">

@@ -47,6 +47,7 @@
 
         function registerItems(){
             session_start();
+            $this->dao->updateItemsPriceFromSeller($_SESSION["idUser"], $_POST["item-type"], $_POST['price']);
             for ($i=0; $i < $_POST["qtd"]; $i++) { 
                 $item = new Item($_POST["item-type"], 'active', $_POST['coast'], $_POST['price'], $_SESSION["idUser"]);                
                 $this->dao->addItemsForSeller($item);                

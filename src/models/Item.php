@@ -9,6 +9,14 @@ class Item {
     private $price;
     private $idSeller;
 
+    function __construct($idItemType, $status, $purchasePrice, $price, $idSeller){
+        $this->idItemType = $idItemType;
+        $this->status = $status;
+        $this->purchasePrice = $purchasePrice;
+        $this->price = $price;
+        $this->idSeller = $idSeller;
+    }
+
     public function getId()
     {
         return $this->id;
@@ -21,14 +29,14 @@ class Item {
         return $this;
     }
 
-    public function getSeller()
+    public function getIdSeller()
     {
-        return $this->seller;
+        return $this->idSeller;
     }
 
-    public function setSeller($seller)
+    public function setIdSeller($seller)
     {
-        $this->seller = $seller;
+        $this->idSeller = $seller;
 
         return $this;
     }

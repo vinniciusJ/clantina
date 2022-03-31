@@ -128,4 +128,25 @@
             $dados = $query->fetchAll(PDO::FETCH_OBJ);            
             return $dados;
         }
+
+        function discardItemsFromSeller($idSeller, $idItemType, $quantity){
+            $sql = "UPDATE item
+            SET status = 'discarded'
+            WHERE status = 'active' and id_seller = {$idSeller} and id_item_type = {$idItemType} LIMIT {$quantity};";
+            $this->conn->exec($sql);
+        }
+
+        function addItemsForSeller(Item $item){
+            $sql = "INSERT INTO item(id_item_type, status, purchase_price, price, id_seller) 
+            VALUES ('{$item->getIdItemType()}', '{$item->getStatus()}', '{$item->getPurchasePrice()}', '{$item->getPrice()}', {$item->getIdSeller()}";
+            $this->conn->exec($sql);
+        }
+
+        function updateItemsPriceFromSeller($idSeller, $idItemType, $price){
+            $sql = "UPDATE item
+            SET price = {$price}
+            WHERE status = 'active' and id_seller = {$idSeller} and id_item_type = {$idItemType}";
+            echo $sql;
+            $this->conn->exec($sql);
+        }
     }

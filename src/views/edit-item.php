@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../../public/styles/global.css">
+    <?php session_start() ?>
 
     <title>Clantina | Editar Item</title>
 </head>
@@ -18,19 +19,15 @@
             <button id="go-back">
                 <img src="../../public/images/left-arrow.svg" alt="Voltar">
             </button>
-            <h1>Pão de queijo</h1>
+            <h1><?php echo $_SESSION['list-items'][0]->name ?></h1>
         </header>
 
-        <form method="POST">
-            <div class="fieldset">
-                <label class="input-title" for="qtd">Quantidade:</label>
-                <input class="input" type="number" id="qtd">
-            </div>
+        <form method="POST" action="../controllers/ItemController.php?action=3">
             <div class="payment__value">
-                <strong>Preço unitário:</strong>
+                <strong>Novo Preço Unitário:</strong>
                 <label for="price">
                     <strong>R$</strong>
-                    <input type="number" min="0" name="price" id="price" type="text" placeholder="0,00">
+                    <input value=<?php echo "{$_SESSION['list-items'][0]->price}" ?> type="number" min="0" name="price" id="price" type="text" placeholder="0,00">
                 </label>
             </div>
 

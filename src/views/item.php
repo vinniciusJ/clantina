@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="../../public/styles/item.css">
 
-    <title>Clantina | <?php echo "<h1>{$_SESSION['list-items'][0]->name}</h1>" ?>   </title>
+    <title>Clantina | <?php echo "{$_SESSION['list-items'][0]->name}" ?>   </title>
 </head>
 <body>
     <main class="container">
@@ -36,12 +36,12 @@
                     echo "<p class='item-info'><strong>Preço: </strong>R$ <span>{$_SESSION['list-items'][0]->price} </span></p>";
                     echo "<p class='item-info'><strong>Custo: </strong>R$ <span> {$_SESSION['list-items'][0]->purchase_price}</span></p>";
                     echo "<footer class='footer'>
-                            <a class='link-btn' href='edit-item.php/{$_SESSION['idUser']}'>
+                            <a class='link-btn' href='edit-item.php'>
                                 <button class='btn'>
                                     <strong>Editar Item <img src='../../public/images/edit.svg' alt='Editar Item'></strong>
                                 </button>
                             </a>
-                            <a class='link-btn' href='discard-items.php/{$_SESSION['idUser']}'>
+                            <a class='link-btn' href='discard-items.php'>
                                 <button type='button' class='btn btn-black'>
                                     <strong>Descartar Itens <img src='../../public/images/x.svg' alt='Descartar Item'></strong>
                                 </button>

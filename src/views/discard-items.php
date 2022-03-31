@@ -20,14 +20,17 @@
             </button>
             <div>
                 <h1>Descartar Itens:</h1>
-                <h2>Pão de queijo</h2>
+                <?php
+                session_start();
+                echo "<h2>{$_SESSION['list-items'][0]->name}</h2>"
+                ?>            
             </div>
         </header>
 
         <form>
             <div class="fieldset">
                 <label class="input-title" for="qtd">Quantidade a ser descartada:</label>
-                <input class="input" type="number" id="qtd" value="0">
+                <input class="input" type="number" id="qtd" value="0" min=0 max=<?php echo "{$_SESSION['list-items'][0]->quantity}" ?> >
             </div>
 
             <footer>

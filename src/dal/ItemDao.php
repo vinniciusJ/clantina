@@ -68,7 +68,7 @@
         
         function listAllActiveItemsFromSellerAndCategory($sellerId, $itemTypeId){
             $sql = 
-            "select round(avg(purchase_price), 3) as purchase_price, count(id_item) as quantity, avg(item.price) as price, it.id_item_type as id, it.name as name from item
+            "select round(avg(purchase_price), 2) as purchase_price, count(id_item) as quantity, avg(item.price) as price, it.id_item_type as id, it.name as name from item
             inner join item_type as it on item.id_item_type = it.id_item_type 
             inner join user on item.id_seller = user.id_user
             where item.status = 'active' and item.id_seller = {$sellerId} and item.id_item_type = {$itemTypeId}
@@ -109,7 +109,7 @@
 
         function calculateAllPurchasePriceOfInactiveItemsFromSeller($idSeller){
             $sql = 
-            "select sum(purchase_price) as cost from item
+            "select round(sum(purchase_price), 2) as cost from item
             inner join user on item.id_seller = user.id_user
             where item.id_seller = {$idSeller} and item.status != 'active'
             group by item.id_seller";
@@ -120,7 +120,7 @@
 
         function calculateAllPurchasePriceOfInactiveItems(){
             $sql = 
-            "select sum(purchase_price) as cost from item
+            "select round(sum(purchase_price), 2) as cost from item
             inner join user on item.id_seller = user.id_user
             where item.status != 'active'
             group by item.id_seller";

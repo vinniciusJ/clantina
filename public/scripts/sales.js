@@ -1,5 +1,6 @@
 const periodForm = document.querySelector('#period-form')
 
+/*
 const dateInputs = {
     initial: document.querySelector('[name=initial-date]'),
     final: document.querySelector('[name=final-date]')
@@ -17,7 +18,7 @@ dateInputs.final.addEventListener('change', ({ target }) => {
     if(parsedFinalDate > parsedInitialDate){
         periodForm.submit()
     }
-})
+})*/
 
 window.addEventListener('DOMContentLoaded', event => {
     const minusButtons = [...document.querySelectorAll('.sale-container__minuts-button--btn')]

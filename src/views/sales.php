@@ -30,7 +30,12 @@
                 $sales = $_SESSION["sales"];
                 $salesItems = $_SESSION["salesItems"];
                 $i = 0;
-                foreach($sales as $sale){             
+                foreach($sales as $sale){       
+                    $formatedValue = number_format($sale->value, 2);
+                    $formatedPayedValue = number_format($sale->payed_value, 2);
+                    $formatedChange = number_format($sale->change, 2);
+                    
+
                     echo "<div class='sale-container' >
                             <header class='sale-container__minus-button'>
                                 <button class='sale-container__minuts-button--btn' >
@@ -47,24 +52,26 @@
                             echo "
                                 <li><strong class='information-label'>Cliente: </strong>{$sale->client}</li>
                                 <li><strong class='information-label'>Data: </strong>{$sale->date}</li>
-                                <li><strong class='information-label'>Total: </strong>{$sale->value}</li>
+                                <li><strong class='information-label'>Total: </strong>{$formatedValue}</li>
                             </ul>
 
                             <ul class='other-information'>
                                 <li><strong class='information-label'>Pagamento: </strong>{$sale->type}</li>
-                                <li><strong class='information-label'>Recebido: </strong>R$ {$sale->payed_value}</li>
-                                <li><strong class='information-label'>Troco: </strong>R$ {$sale->change}</li>
+                                <li><strong class='information-label'>Recebido: </strong>R$ {$formatedPayedValue}</li>
+                                <li><strong class='information-label'>Troco: </strong>R$ {$formatedChange}</li>
                                 <li><strong class='information-label'>Observação: </strong>{$sale->note}</li>
                             </ul>
                             <section class='sale-items'>
                                 <strong class='information-label'>Itens: </strong>
                                 <table class='sale-items-table'>
                                     <tbody>";
-                                foreach ($salesItems[$i] as $item){                                    
+                                foreach ($salesItems[$i] as $item){    
+                                    $formatedPrice = number_format($item->price, 2);
+                                    
                                     echo "
                                         <tr class='sale-items-table__row'>
                                             <td>{$item->name}</td>
-                                            <td>R$ {$item->price}</td>
+                                            <td>R$ {$formatedPrice}</td>
                                             <td>{$item->quantity} uni.</td>
                                         </tr>                                            
                                         ";

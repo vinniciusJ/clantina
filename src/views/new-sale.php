@@ -46,7 +46,7 @@
                                     foreach($_SESSION["list-items"] as $item){
                                         echo "<option value='{$item->id_type}'>{$item->name}</option>";
                                     }
-                                ?>                                
+                                ?>                       
                             </select>
                             <button type="button"><img src="../../public/images/trash.svg" alt="Excluir item"></button> 
                         </header>                        
@@ -60,14 +60,14 @@
                             <div class="item-container__info--list">
                                 <span>Preço unitário: </span>
                                 <span class="price-info">R$ 
-                                    <span id="price-info"><?php echo "{$_SESSION['list-items'][0]->price}" ?></span>
+                                    <span data-id="price-info"><?php echo number_format($_SESSION['list-items'][0]->price, 2); ?></span>
                                 </span>
                                 
                             </div>
                             <div class="item-container__info--list">
                                 <span>Subtotal: </span>
                                 <span class="subtotal-info">R$ 
-                                    <span id="subtotal-info"><?php echo "{$_SESSION['list-items'][0]->price}"; ?></span>
+                                    <span data-id="subtotal-info"><?php echo number_format($_SESSION['list-items'][0]->price, 2); ?></span>
                                 </span>
                             </div>
                         </section>
@@ -95,12 +95,16 @@
                                 </div>
                                 <div class="item-container__info--list">
                                     <span>Preço unitário: </span>
-                                    <span class="price-info">R$ <span id="price-info"><?php echo "{$_SESSION['list-items'][0]->price}"; ?></span></span>
+                                    <span class="price-info">R$ <span data-id="price-info">
+                                        <?php echo number_format($_SESSION['list-items'][0]->price, 2); ?>
+                                    </span></span>
                                 </div>
                                 <div class="item-container__info--list">
                                     <span>Subtotal: </span>
                                     <span class="subtotal-info">R$ 
-                                        <span id="subtotal-info"><?php echo "{$_SESSION['list-items'][0]->price}"; ?></span>
+                                        <span data-id="subtotal-info">
+                                        <?php echo number_format($_SESSION['list-items'][0]->price, 2); ?>
+                                        </span>
                                     </span>
                                 </div>
                             </section>
@@ -127,7 +131,7 @@
                 </div>
     
                 <div class="payment__results">
-                    <strong>Total da venda:</strong> R$ <input type="number" value="5" name="value" class="total-price" readonly></input>
+                    <strong>Total da venda; </strong>R$  <input type="number" value="0" name="value" class="total-price" readonly></input>
                 </div>
                 <div class="payment__results">
                     Troco: R$ <input type="number" class="total-price" value="0" name="change" readonly></input>

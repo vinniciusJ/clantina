@@ -10,6 +10,11 @@ const createElementFromTemplate = () => {
 
     const container = nodeItem.querySelector('div.item-container')
     const itemSelector = nodeItem.querySelector('select')
+    const deleteItem = nodeItem.querySelector('.item-container__header button')
+
+    deleteItem.addEventListener('click', () => {
+        itemsList.removeChild(container)
+    })
 
     lastItemIndex++
     container.dataset.id = lastItemIndex

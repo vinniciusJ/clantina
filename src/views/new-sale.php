@@ -54,20 +54,20 @@
                             <div class="item-container__info--list">
                                 <span>Quantidade: </span>
                                 <div class="qtty-input">
-                                    <input type="number" name="quantity[]" value="1" id="quantity" min="0">
+                                    <input type="number" name="quantity[]" max=<?php echo "{$_SESSION['list-items'][0]->quantity}" ?> value="1" id="quantity" min="0">
                                 </div>
                             </div>
                             <div class="item-container__info--list">
                                 <span>Preço unitário: </span>
                                 <span class="price-info">R$ 
-                                    <span id="price-info">2,50</span>
+                                    <span id="price-info"><?php echo "{$_SESSION['list-items'][0]->price}" ?></span>
                                 </span>
                                 
                             </div>
                             <div class="item-container__info--list">
                                 <span>Subtotal: </span>
                                 <span class="subtotal-info">R$ 
-                                    <span id="subtotal-info">2,50</span>
+                                    <span id="subtotal-info"><?php echo "{$_SESSION['list-items'][0]->price}"; ?></span>
                                 </span>
                             </div>
                         </section>
@@ -90,17 +90,17 @@
                                 <div class="item-container__info--list">
                                     <span>Quantidade: </span>
                                     <div class="qtty-input">                                        
-                                        <input type="number" name="quantity[]" value="1" id="quantity" min="0">                                        
+                                        <input type="number" name="quantity[]" value="1" id="quantity" min="0" max=<?php echo "{$_SESSION['list-items'][0]->quantity}" ?>>                                        
                                     </div>
                                 </div>
                                 <div class="item-container__info--list">
                                     <span>Preço unitário: </span>
-                                    <span class="price-info">R$ <span id="price-info">2,50</span></span>
+                                    <span class="price-info">R$ <span id="price-info"><?php echo "{$_SESSION['list-items'][0]->price}"; ?></span></span>
                                 </div>
                                 <div class="item-container__info--list">
                                     <span>Subtotal: </span>
                                     <span class="subtotal-info">R$ 
-                                        <span id="subtotal-info">2,50</span>
+                                        <span id="subtotal-info"><?php echo "{$_SESSION['list-items'][0]->price}"; ?></span>
                                     </span>
                                 </div>
                             </section>

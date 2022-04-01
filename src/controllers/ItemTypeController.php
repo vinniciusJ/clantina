@@ -15,10 +15,8 @@
 
         function registerItemType(){
             $itemType = new ItemType($_POST['item-type']);
-            $this->dao->insertItemType($itemType);
-
-            $this->list();
-            header("Location: ../views/item-types.php");
+            $this->dao->insertItemType($itemType);            
+            header("Location: ../views/dashboard.php");
             exit();
         }
 
@@ -42,7 +40,7 @@
             exit();    
         case 3:
             $itemTypeController->list();       
-            header("Location: ../views/item-type.php");
+            header("Location: ../views/item-types.php");
             exit();
     }
     

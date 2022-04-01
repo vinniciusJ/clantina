@@ -36,7 +36,7 @@
                     ?>                    
                 </select>
             </section>            
-            <section class="items">
+            <section class="items" id="items">
                 <h2>Item:</h2>                
                 <div class="items-list">
                     <div class="item-container" data-id="0">
@@ -161,12 +161,14 @@
             <?php             
                 foreach($_SESSION["list-items"] as $item){
                     echo "{";
-                    echo "idItemType: {$item->id_type}, price: {$item->price}, quantity: {$item->quantity}";
+                    echo "idItemType: {$item->id_type}, price: "; 
+                    echo number_format($item->price, 2);
+                    echo ", quantity: {$item->quantity}";
                     echo "},";
                 }
             ?>                    
         ]        
-        selectItems.onchange = event => {            
+        selectItems.onchange = event => {                        
             itemsDataList.forEach(item => {
                 if(item.idItemType == event.target.value){
                     

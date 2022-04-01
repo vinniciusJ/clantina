@@ -87,7 +87,7 @@
 
    background: none;
    border: solid .25rem var(--black-600);
-   appearance: textfield;
+   
 }
 
 
@@ -135,6 +135,7 @@
    font-weight: 600;
 
    display: flex;
+   gap: 1rem;
    
 }
 

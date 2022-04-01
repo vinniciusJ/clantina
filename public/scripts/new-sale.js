@@ -4,6 +4,7 @@ const itemContainerTemplate = document.querySelector('#item-container')
 const firstItemContainer = {
     container: document.querySelector('.item-container'),
     quantityInput: document.querySelector('.item-container input[type=number]'),
+    select: document.querySelector('.item-container select')
 }
 
 const finalPriceInput = document.querySelector('input.total-price')
@@ -35,6 +36,7 @@ const createElementFromTemplate = () => {
 
     const container = nodeItem.querySelector('div.item-container')
     const qttyInput = container.querySelector('input[type=number]')
+    const selectItemInput = container.querySelector('select')
     const deleteItem = container.querySelector('.item-container__header button')
 
     deleteItem.addEventListener('click', () => {
@@ -43,6 +45,11 @@ const createElementFromTemplate = () => {
 
     qttyInput.addEventListener('change', ({ target: { value} }) => {
         updateSubTotalValue(container, value)
+        calculateSaleValue()
+    })
+
+    selectItemInput.addEventListener('change', () => {
+        calculateSaleValue()
     })
 
     calculateSaleValue()
@@ -92,7 +99,9 @@ firstItemContainer.quantityInput.addEventListener('change', ({ target: { value }
     calculateSaleValue()
 })
 
-console.log(changeInput)
+firstItemContainer.select.addEventListener('change', () => {
+    calculateSaleValue()
+})
 
 receivedValueInput.addEventListener('change', ({ target: { value } }) => {
     if(Number(value) > finalPriceInput.value){

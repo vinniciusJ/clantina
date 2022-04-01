@@ -22,15 +22,36 @@
             </button>
             <h1>Tipos de Item</h1>
         </header>
+        <?php session_start(); ?>
+
+        <?php
+            if(sizeof($_SESSION['itemsTypes']) > 0):            
+        ?>
 
         <ul class="items">
-            <?php 
-            session_start();
+            <?php             
             foreach($_SESSION["itemsTypes"] as $type){
                 echo "<li class='item'><span>{$type->name}</span></li>";
             }
             ?>                        
         </ul>
+
+        <?php
+            endif;
+        ?>
+
+        <?php
+            if(sizeof($_SESSION['itemsTypes']) == 0):            
+        ?>
+
+        <section class="empty-storage">
+            <img src="../../public/images/frown.svg">
+            Nenhuma categoria de item cadastrada
+        </section> 
+
+        <?php
+            endif;
+        ?>
 
         <footer>
             <a href="new-item-type.php">

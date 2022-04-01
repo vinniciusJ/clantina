@@ -22,17 +22,19 @@
             </button>
             <h1>Estoque</h1>
         </header>
+        <?php
+            session_start(); 
+        ?>
 
         <?php
 
-        if($condition = true):
+            if(sizeof($_SESSION['list-items-categories']) > 0):
 
         ?>
 
         <section class="items">            
             <ul>               
-            <?php
-            session_start();            
+            <?php                       
                 foreach($_SESSION['list-items-categories'] as $item){
                     echo "<li class='item'><a href='../controllers/ItemController.php?action=1&id={$item->id}'> {$item->name} <img src='../../public/images/chevron-right.svg'></a></li>";
                 }
@@ -46,7 +48,7 @@
 
         <?php
 
-            if($condition = false):
+            if(sizeof($_SESSION['list-items-categories']) == 0):
             
         ?>
 
@@ -59,7 +61,7 @@
             endif;
         ?>
 
-        <?php
+        <?php        
             if($_SESSION['type'] == 'seller'){
                 require_once __DIR__ . "/components/storage-new-item.php";
             }            

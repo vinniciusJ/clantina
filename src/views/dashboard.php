@@ -23,7 +23,7 @@
         </header>
 
         <?php
-                  
+                 
             if($_SESSION['type'] == 'seller'){
                 require_once __DIR__ . "/components/dashboard-new-sale-button.php";
             } elseif($_SESSION['type'] == 'client'){

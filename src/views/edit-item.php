@@ -27,7 +27,7 @@
                 <strong>Novo Preço Unitário:</strong>
                 <label for="price">
                     <strong>R$</strong>
-                    <input value=<?php echo "{$_SESSION['list-items'][0]->price}" ?> type="number" min="0" name="price" id="price" type="text" placeholder="0,00" step="0.01">
+                    <input value=<?php echo number_format($_SESSION['list-items'][0]->price, 2) ?> type="number" min="0" name="price" id="price" type="text" placeholder="0,00" step="0.01">
                 </label>
             </div>
 

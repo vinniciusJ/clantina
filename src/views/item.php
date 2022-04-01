@@ -33,7 +33,9 @@
                 if($_SESSION["type"] == "seller"){
                     echo '<section class="item-infos"> ';
                     echo "<p class='item-info'><strong>Quantidade: </strong><span> {$_SESSION['list-items'][0]->quantity} </span> uni.</p>";
-                    echo "<p class='item-info'><strong>Preço: </strong>R$ <span>{$_SESSION['list-items'][0]->price} </span></p>";
+                    echo "<p class='item-info'><strong>Preço: </strong>R$ <span>";
+                    echo number_format($_SESSION['list-items'][0]->price, 2);
+                    echo "</span></p>";
                     echo "<p class='item-info'><strong>Custo: </strong>R$ <span> {$_SESSION['list-items'][0]->purchase_price}</span></p>";
                     echo "<footer class='footer'>
                             <a class='link-btn' href='edit-item.php'>
@@ -53,7 +55,9 @@
                         foreach($_SESSION['list-items'] as $item){
                             echo '<section class="item-infos"> ';
                             echo "<p class='item-info'><strong>Quantidade: </strong><span> {$item->quantity} </span> uni.</p>";
-                            echo "<p class='item-info'><strong>Preço: </strong>R$ <span>{$item->price} </span></p>";
+                            echo "<p class='item-info'><strong>Preço: </strong>R$ <span>";
+                            echo number_format($item->price, 2); 
+                            echo "</span></p>";
                             echo "<p class='item-info'><strong>Vendedor: </strong><span> {$item->seller}</span></p>";
                             echo '</section>';
                             echo "<br>";
